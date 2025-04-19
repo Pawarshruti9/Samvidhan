@@ -1,0 +1,55 @@
+.image-section {
+    display: flex;
+    justify-content: center;
+    padding: 50px 10%;
+    background-color: #f4f4f4;
+  }
+  
+  .image-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+    max-width: 1000px;
+  }
+  
+  .left-images {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .small-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .right-image {
+    display: flex;
+    align-items: center;
+  }
+  
+  .large-image {
+    width: 100%;
+    height: 520px; /* Should be equal to sum of two small images + gap */
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 900px) {
+    .image-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .large-image {
+      height: 300px;
+    }
+  
+    .small-image {
+      height: 150px;
+    }
+  }
+  

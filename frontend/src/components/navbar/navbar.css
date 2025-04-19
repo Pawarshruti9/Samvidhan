@@ -1,0 +1,210 @@
+/* Navbar */
+.navbar {
+    background: #e1dfdd;
+    box-shadow: 0 4px 2px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 50;
+    top: 0;
+    padding: 10px 0;
+}
+
+/* Navbar Container */
+.navbar-container {
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.navbar-logo img {
+    height: 80px;
+    cursor: pointer;
+}
+
+/* Navigation Links */
+.navbar-links-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-links {
+    
+    display: flex;
+    gap: 20px;
+}
+
+/* General Link Styling */
+.navbar-links a,
+.dropdown-toggle {
+    cursor: pointer;
+    color: #0b2d2e;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 10px 15px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Underline Hover Effect */
+.navbar-links a::after,
+.dropdown-toggle::after {
+    cursor: pointer;
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #873c02;
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease-in-out;
+}
+
+.navbar-links a:hover::after,
+.dropdown:hover .dropdown-toggle::after {
+    width: 100%;
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 42px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 180px;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 12px;
+    color: #0b2d2e;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background 0.3s ease-in-out;
+}
+
+.dropdown-menu a:hover {
+    background: rgba(135, 60, 2, 0.1);
+    color: #873c02;
+}
+
+/* Language Selector */
+.language-selector {
+    position: relative;
+    display: flex;
+    align-items: center; /* Fixes alignment issue */
+}
+
+.language-button {
+    background: #0b2d2e;
+    color: white;
+    border: none;
+    padding: 15px 26px;  /* Added more padding */
+    font-size: 1rem;
+    border-radius: 35px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.language-button:hover {
+    background: #873c02;
+}
+
+/* Language Dropdown */
+.language-menu {
+    position: absolute;
+    top: 56px; /* Adjusted for perfect spacing */
+    right: 0.1;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 160px;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+/* Ensure Language Dropdown is Clickable */
+.language-selector:hover .language-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Language Dropdown Links */
+.language-menu button {
+    width: 100%;
+    background: white; /* Default background */
+    border: none;
+    padding: 12px;
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.language-menu button:hover {
+    background: rgba(135, 60, 2, 0.1); /* Light orange hover effect */
+    color: #873c02; /* Darker text on hover */
+}
+
+.login-button {
+    background: #0b2d2e;
+    color: white;
+    border: none;
+    margin-left: 10px;
+    padding: 15px 26px;  /* Added more padding */
+    font-size: 1rem;
+    border-radius: 35px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.login-button:hover {
+    background: #873c02;
+}
+.register-button {
+    background: #0b2d2e;
+    color: white;
+    border: none;
+    padding: 15px 26px;  /* Added more padding */
+    font-size: 1rem;
+    border-radius: 35px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.register-button:hover {
+    background: #873c02;
+}

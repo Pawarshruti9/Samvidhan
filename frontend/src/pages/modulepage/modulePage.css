@@ -1,0 +1,92 @@
+/* General Page Styling */
+.module-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    padding: 20px;
+    padding-top: 120px; /* Adjust based on navbar height */
+}
+
+  
+  
+  /* Video Section Styling */
+  .video-container {
+    width: 90%;
+    /* max-width: 900px; */
+    margin-top: 20px;
+  }
+  
+  .video-container iframe {
+    width: 100%;
+    height: 450px;
+    border: none;
+    border-radius: 12px;
+  }
+  
+  /* Theory Section Styling */
+  /* Theory Section Styling */
+.theory-section {
+    width: 86%;
+    background: #f8f9fa; /* Matches page background */
+    border: 2px solid #134345; /* Theme color border */
+    border-radius: 12px;
+    padding: 30px;
+    margin-top: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.theory-section h2 {
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: #333;
+}
+
+.theory-section p {
+    margin-bottom: 15px;
+    color: #555;
+    text-align: justify;
+}
+
+ /* Buttons Section */
+.module-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.download-btn,
+.start-btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+}
+
+.download-btn {
+    background-color: #0b2d2e;
+    color: white;
+    border: none;
+}
+
+.download-btn:hover {
+    background-color: #873c02;
+}
+
+.start-btn {
+    background-color: #0b2d2e;
+    color: white;
+    border: none;
+}
+
+.start-btn:hover {
+    background-color: #873c02;
+}
+ 

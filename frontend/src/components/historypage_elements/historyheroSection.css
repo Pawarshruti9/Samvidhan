@@ -1,0 +1,32 @@
+.hero-section {
+    position: relative;
+    margin-top: 108px;
+    height: 60vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 97.3%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for better readability */
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .hero-content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  

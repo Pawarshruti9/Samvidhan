@@ -1,0 +1,93 @@
+/* Constitution Section */
+.constitution-section {
+    padding: 50px 5%;
+    background-color: #f5f5f5;
+}
+
+/* Header Section */
+.constitution-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #e0f7fa; /* Light cyan background */
+    border-radius: 12px;
+}
+
+/* Left: Title & Subheading */
+.header-left h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #0b2d2e;
+}
+
+.header-left h4 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #555;
+    margin-top: 5px;
+}
+
+/* Right: Paragraph */
+.header-right {
+    width: 50%;
+}
+
+.header-right p {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* Cards Container */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* Individual Card */
+.constitution-card {
+    background: #0b2d2e;
+    color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.constitution-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Card Content */
+.card-content {
+    flex: 1;
+}
+
+.constitution-card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.constitution-card p {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* Next Icon */
+.next-icon {
+    font-size: 24px;
+    margin-left: 15px;
+    color: white;
+    transition: transform 0.3s ease-in-out;
+}
+
+.constitution-card:hover .next-icon {
+    transform: translateX(5px);
+}

@@ -1,0 +1,113 @@
+/* Game Section */
+.game-section {
+    padding: 20px 8%;
+    background: #f9f9f9;
+}
+
+/* Header Section */
+.game-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.game-header h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #073b4c;
+    letter-spacing: 1px;
+}
+
+.game-header p {
+    font-size: 18px;
+    color: #666;
+    margin-top: 10px;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Cards Container */
+.game-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 35px;
+    justify-content: center;
+}
+
+/* Individual Card */
+.game-card {
+    background: white;
+    color: #073b4c;
+    border-radius: 20px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Image */
+.game-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.game-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease-in-out;
+}
+
+.game-card:hover .game-image img {
+    transform: scale(1.05);
+}
+
+/* Card Content */
+.game-card-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    text-align: center;
+}
+
+/* Card Title */
+.game-card-content h3 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Card Description */
+.game-card-content p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* CTA Button */
+.cta-button {
+    background-color: #0b2d2e;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.cta-button:hover {
+    background-color: #348487;
+    transform: scale(1.05);
+}

@@ -1,0 +1,102 @@
+/* About Section */
+.about {
+    /* width: 100%; */
+    background: #ffffff;  /* White background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px; /* Adjusted padding */
+}
+
+/* About Section Container */
+.about-container {
+    max-width: 1200px;
+    text-align: center;
+}
+
+/* Heading */
+.about-content h1 {
+    font-size: 2.8rem;
+    color: #6d2e12;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.about-content p {
+    font-size: 1.2rem;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 50px;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Key Pillars Section */
+.pillars {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    padding: 20px;
+}
+
+/* Pillar Card */
+.pillar {
+    background: linear-gradient(135deg, #f8f3f0, #eae2de); /* Classy gradient */
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease-in-out;
+    border-left: 5px solid #873c02; /* Left accent border */
+}
+
+/* Hover Effect */
+.pillar:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Pillar Icon */
+.pillar-icon {
+    font-size: 3rem;
+    color: #873c02;
+    margin-bottom: 15px;
+}
+
+/* Pillar Heading */
+.pillar h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #3d2b1f;
+    margin-bottom: 12px;
+}
+
+/* Pillar Text */
+.pillar p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .pillars {
+        grid-template-columns: 1fr;
+    }
+
+    .about-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .about-content p {
+        font-size: 1.1rem;
+    }
+
+    .pillar {
+        padding: 20px;
+    }
+}

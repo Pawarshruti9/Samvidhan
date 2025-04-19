@@ -1,0 +1,92 @@
+.submodule-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f8f9fa;
+    min-height: 120vh;
+    padding: 20px;
+    padding-top: 120px;
+}
+
+/* Video Section */
+.submodule-video-container {
+    width: 90%;
+    margin-top: 20px;
+}
+
+.submodule-video-container iframe {
+    width: 100%;
+    height: 450px;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Theory Section */
+.submodule-theory-section {
+    width: 86%;
+    background: #f8f9fa;
+    border: 2px solid #134345;
+    border-radius: 12px;
+    padding: 30px;
+    margin-top: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.submodule-theory-section h2 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.module-theory-section p {
+    margin-bottom: 15px;
+    color: #555;
+    text-align: justify;
+}
+
+/* Buttons Section */
+.submodule-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.submodule-buttons button {
+    background-color: #0b2d2e !important;
+    color: white !important;
+    border: none !important;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+}
+
+.submodule-buttons button:hover {
+    background-color: #873c02 !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .submodule-page {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .submodule-video-container iframe {
+        height: 250px;
+    }
+
+    .submodule-nav-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
