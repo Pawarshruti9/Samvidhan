@@ -1,0 +1,904 @@
+{
+  "main_module": {
+    "title": "Fundamental Rights",
+    "overview": {
+      "description": "Fundamental Rights are the basic human rights enshrined in the Constitution of India which are guaranteed to all citizens. They are enforceable by the courts, subject to specific restrictions. These rights are crucial for the all-round development of individuals and to preserve human dignity.",
+      "location_in_constitution": "Part III of the Constitution from Articles 12 to 35.",
+      "importance": [
+        "Serve as limitations on government power",
+        "Ensure the democratic nature of our polity",
+        "Part of the \"basic structure\" of the Constitution, meaning they cannot be removed even by constitutional amendment"
+      ]
+    },
+    "submodule_1": {
+      "title": "Introduction to Fundamental Rights",
+      "content": {
+        "definition": "Fundamental Rights are basic rights that are guaranteed to all citizens by the Constitution.",
+        "key_points": [
+          "Essential for the all-round development of individuals",
+          "Protected and enforceable by courts",
+          "Available against the state (with some exceptions that can be enforced against individuals too)",
+          "Not absolute (have reasonable restrictions)"
+        ],
+        "need_for_fundamental_rights": {
+          "protection_against_state_tyranny": "They limit government power and prevent abuse of authority",
+          "promotion_of_dignity": "They ensure respect for human dignity and worth",
+          "establishment_of_democracy": "They are essential for a functioning democracy",
+          "protection_of_minorities": "They safeguard the rights of minority groups",
+          "social_transformation": "They help in removing social evils like untouchability"
+        },
+        "enforcement_of_fundamental_rights": {
+          "constitutional_remedies": {
+            "description": "The right to constitutional remedies (Article 32) allows citizens to approach the Supreme Court directly if their fundamental rights are violated.",
+            "alternative": "High Courts can also be approached under Article 226"
+          },
+          "writs_available": [
+            "Habeas Corpus: To produce a detained person before the court",
+            "Mandamus: To order a public authority to perform its duty",
+            "Prohibition: To prohibit a lower court from proceeding with a case",
+            "Certiorari: To transfer a case from a lower court to a higher court",
+            "Quo Warranto: To question the legality of a claim to a public office"
+          ]
+        },
+        "classification_of_fundamental_rights": [
+          "Right to Equality (Articles 14-18)",
+          "Right to Freedom (Articles 19-22)",
+          "Right against Exploitation (Articles 23-24)",
+          "Right to Freedom of Religion (Articles 25-28)",
+          "Cultural and Educational Rights (Articles 29-30)",
+          "Right to Constitutional Remedies (Article 32)"
+        ]
+      }
+    },
+    "submodule_2": {
+      "title": "Right to Equality (Article 14)",
+      "content": {
+        "basic_concept": "Article 14 states: \"The State shall not deny to any person equality before the law or the equal protection of the laws within the territory of India.\"",
+        "components_of_article_14": [
+          {
+            "equality_before_law": "This is a negative concept that implies the absence of any special privileges for anyone. All persons are subject to the same laws."
+          },
+          {
+            "equal_protection_of_laws": "This is a positive concept that ensures equal treatment in equal circumstances. It permits reasonable classification of persons, objects, and transactions by the state for the purpose of achieving specific ends."
+          }
+        ],
+        "reasonable_classification": {
+          "definition": "For a classification to be reasonable under Article 14, it must satisfy two conditions:",
+          "conditions": [
+            "The classification must be based on an intelligible differentia (some distinguishing feature)",
+            "The differentia must have a rational relation to the object sought to be achieved by the law"
+          ]
+        },
+        "examples_of_application": [
+          "Laws providing special protection for women and children",
+          "Treating different categories of employees differently based on educational qualifications",
+          "Progressive taxation where higher income groups pay higher tax rates"
+        ],
+        "recent_developments": [
+          "The Supreme Court has evolved the principle of \"substantive equality\" that goes beyond formal equality",
+          "The doctrine of \"arbitrariness\" where any arbitrary action by the state violates Article 14",
+          "The concept that equals should be treated equally and unequals should not be treated equally"
+        ],
+        "landmark_cases": [
+          "E.P. Royappa v. State of Tamil Nadu (1974)",
+          "Maneka Gandhi v. Union of India (1978)",
+          "Indra Sawhney v. Union of India (1992)"
+        ]
+      }
+    },
+    "submodule_3": {
+      "title": "Prohibition of Discrimination (Article 15)",
+      "content": {
+        "basic_concept": "Article 15 prohibits discrimination on grounds of religion, race, caste, sex, or place of birth.",
+        "key_provisions": [
+          {
+            "article_15_1": "The State shall not discriminate against any citizen on grounds only of religion, race, caste, sex, place of birth or any of them."
+          },
+          {
+            "article_15_2": "No citizen shall be subjected to any disability, liability, restriction or condition with regard to: a) Access to shops, public restaurants, hotels and places of public entertainment b) The use of wells, tanks, bathing ghats, roads and places of public resort maintained wholly or partly out of State funds or dedicated to the use of the general public"
+          },
+          {
+            "article_15_3": "The State can make special provisions for women and children."
+          },
+          {
+            "article_15_4": "The State can make special provisions for the advancement of socially and educationally backward classes or for Scheduled Castes and Scheduled Tribes."
+          },
+          {
+            "article_15_5": "The State can make special provisions for admission to educational institutions (including private institutions) for backward classes."
+          },
+          {
+            "article_15_6": "The State can make special provisions for economically weaker sections (EWS) of citizens apart from those mentioned in clauses (4) and (5)."
+          }
+        ],
+        "examples_of_application": [
+          "Reservation policies for SC/ST/OBC in educational institutions and government jobs",
+          "Special laws for the protection of women and children",
+          "Scholarships and educational benefits for backward classes",
+          "10% reservation for EWS in the general category"
+        ],
+        "historical_context": [
+          "Article 15(4) was added by the First Amendment (1951) in response to the Supreme Court's decision in State of Madras v. Champakam Dorairajan",
+          "Article 15(5) was added by the 93rd Amendment (2005) to allow reservations in private educational institutions",
+          "Article 15(6) was added by the 103rd Amendment (2019) to provide for EWS reservation"
+        ],
+        "landmark_cases": [
+          "State of Madras v. Champakam Dorairajan (1951)",
+          "Indra Sawhney v. Union of India (1992)",
+          "M. Nagaraj v. Union of India (2006)",
+          "EV Chinnaiah v. State of Andhra Pradesh (2004)"
+        ]
+      }
+    },
+    "submodule_4": {
+    "title": "Equal Opportunity in Public Employment (Article 16)",
+    "content": {
+      "basic_concept": "Article 16 guarantees equality of opportunity in matters of public employment.",
+      "key_provisions": [
+        {
+          "article_16_1": "There shall be equality of opportunity for all citizens in matters relating to employment or appointment to any office under the State."
+        },
+        {
+          "article_16_2": "No citizen shall be discriminated against in respect of any employment or office under the State on grounds only of religion, race, caste, sex, descent, place of birth, residence or any of them."
+        },
+        {
+          "article_16_3": "Parliament may make laws prescribing residence requirements for certain employments within a state."
+        },
+        {
+          "article_16_4": "The State can make provisions for reservation of appointments or posts in favor of backward classes that are not adequately represented in State services."
+        },
+        {
+          "article_16_4A": "The State can make provisions for reservation in matters of promotion for SC/ST."
+        },
+        {
+          "article_16_4B": "The State can consider unfilled reserved vacancies as a separate class of vacancies to be filled up in succeeding years."
+        },
+        {
+          "article_16_5": "Laws can provide that the incumbent of an office related to religious or denominational institution should belong to that particular religion or denomination."
+        },
+        {
+          "article_16_6": "The State can make provisions for reservation up to 10% for economically weaker sections (EWS) in addition to the existing reservations."
+        }
+      ],
+      "reservation_policy": {
+        "description": "The Supreme Court has capped total reservations at 50% (except in extraordinary situations).",
+        "details": [
+          "Creamy layer concept applies to OBC reservations",
+          "No creamy layer concept for SC/ST reservations",
+          "Concept of cadre-based reservations"
+        ]
+      },
+      "examples_of_application": [
+        "Reservation quotas in public sector jobs",
+        "Special recruitment drives for underprivileged sections",
+        "Relaxation in age and qualification requirements for certain categories"
+      ],
+      "landmark_cases": [
+        "Indra Sawhney v. Union of India (1992)",
+        "M. Nagaraj v. Union of India (2006)",
+        "Jarnail Singh v. Lachhmi Narain Gupta (2018)"
+      ]
+    }
+  },
+  "submodule_5": {
+    "title": "Abolition of Untouchability (Article 17)",
+    "content": {
+      "basic_concept": "Article 17 states: 'Untouchability is abolished and its practice in any form is forbidden. The enforcement of any disability arising out of untouchability shall be an offense punishable in accordance with law.'",
+      "historical_context": [
+        "Untouchability has been a social evil in India for centuries.",
+        "It involves discrimination against certain castes and treating them as 'impure'.",
+        "Dr. B.R. Ambedkar, himself born into an 'untouchable' family, played a crucial role in including this provision."
+      ],
+      "implementation_laws": [
+        "Protection of Civil Rights Act, 1955 (originally named the Untouchability (Offences) Act, 1955)",
+        "Scheduled Castes and Scheduled Tribes (Prevention of Atrocities) Act, 1989",
+        "The Employment of Manual Scavengers and Construction of Dry Latrines (Prohibition) Act, 1993",
+        "Prohibition of Employment as Manual Scavengers and their Rehabilitation Act, 2013"
+      ],
+      "forms_of_untouchability_prohibited": [
+        "Denial of access to public places, temples, water sources",
+        "Social exclusion and ostracism",
+        "Occupational discrimination",
+        "Residential segregation",
+        "Discriminatory practices in educational institutions"
+      ],
+      "recent_developments": [
+        "Supreme Court's active role in enforcing anti-untouchability provisions",
+        "Recognition of manual scavenging as a form of untouchability",
+        "Increased penalties for untouchability-related offenses",
+        "Special courts for speedy trials of such cases"
+      ],
+      "landmark_cases": [
+        "People's Union for Democratic Rights v. Union of India (1982)",
+        "Safai Karamchari Andolan v. Union of India (2014)"
+      ]
+    }
+  },
+  "submodule_6": {
+    "title": "Abolition of Titles (Article 18)",
+    "content": {
+      "basic_concept": "Article 18 prohibits the state from conferring titles (except military and academic distinctions) and prevents citizens from accepting titles from foreign states without the President's approval.",
+      "key_provisions": [
+        "Article 18(1): No title, not being a military or academic distinction, shall be conferred by the State.",
+        "Article 18(2): No citizen of India shall accept any title from any foreign State.",
+        "Article 18(3): No person holding any office of profit or trust under the State shall accept any present, emolument, or office from or under any foreign State without the President's consent.",
+        "Article 18(4): No person who is not a citizen of India shall accept any title from the State while being a citizen of a foreign state without the President's consent."
+      ],
+      "historical_context": [
+        "During British rule, titles like 'Rai Bahadur', 'Sir', etc. were given to create a loyal class.",
+        "These titles created artificial distinctions in society.",
+        "Article 18 aims to promote a spirit of equality among citizens."
+      ],
+      "permitted_distinctions": [
+        "Military distinctions (like Param Vir Chakra, Maha Vir Chakra)",
+        "Academic distinctions (like degrees, diplomas)",
+        "National awards (Bharat Ratna, Padma Vibhushan, etc.) are not considered 'titles' as per Supreme Court."
+      ],
+      "landmark_case": "Balaji Raghavan v. Union of India (1996): Supreme Court held that national awards like Bharat Ratna do not amount to 'titles' under Article 18."
+    }
+  },
+  "submodule_7": {
+    "title": "Freedom of Speech and Expression (Article 19(1)(a))",
+    "content": {
+      "basic_concept": "Article 19(1)(a) guarantees to all citizens the right to freedom of speech and expression. This is considered one of the most essential rights in a democracy.",
+      "what_it_includes": [
+        "Right to express one's convictions and opinions freely",
+        "Freedom of press (though not explicitly mentioned)",
+        "Right to broadcast information",
+        "Right to commercial speech (advertisements)",
+        "Right to criticize government policies",
+        "Right to silence",
+        "Right to information",
+        "Right to internet access (as per recent judgments)"
+      ],
+      "reasonable_restrictions": {
+        "Article_19_2": "The state can impose restrictions on this freedom on the following grounds:",
+        "grounds": [
+          "Sovereignty and integrity of India",
+          "Security of the State",
+          "Friendly relations with foreign States",
+          "Public order",
+          "Decency or morality",
+          "Contempt of court",
+          "Defamation",
+          "Incitement to an offense"
+        ]
+      },
+      "recent_developments": [
+        "Recognition of the right to internet access as part of freedom of speech",
+        "Issues related to hate speech on social media",
+        "Intermediary liability rules",
+        "Regulation of OTT platforms",
+        "Protection of journalistic sources"
+      ],
+      "landmark_cases": [
+        "Romesh Thappar v. State of Madras (1950)",
+        "Indian Express Newspapers v. Union of India (1985)",
+        "S. Rangarajan v. P. Jagjivan Ram (1989)",
+        "Shreya Singhal v. Union of India (2015)",
+        "Anuradha Bhasin v. Union of India (2020)"
+      ]
+    }
+  },
+  "submodule_8": {
+    "title": "Freedom of Assembly (Article 19(1)(b))",
+    "content": {
+      "basic_concept": "Article 19(1)(b) guarantees to all citizens the right to assemble peacefully without arms.",
+      "what_it_includes": [
+        "Right to gather in public places",
+        "Right to conduct public meetings",
+        "Right to hold demonstrations and processions",
+        "Right to form associations or unions"
+      ],
+      "reasonable_restrictions": {
+        "Article_19_3": "This right can be restricted on the grounds of:",
+        "grounds": [
+          "Sovereignty and integrity of India",
+          "Public order"
+        ]
+      },
+      "rules_governing_assemblies": [
+        "Section 144 of CrPC allows magistrates to prohibit assemblies",
+        "Police regulations requiring prior permission for processions",
+        "Restrictions on assemblies near sensitive installations",
+        "Unlawful Activities (Prevention) Act provisions"
+      ],
+      "practical_aspects": [
+        "Procedure for obtaining permission for public gatherings",
+        "Distinction between peaceful assembly and violent mob",
+        "Rights and responsibilities of protesters",
+        "Role of police in managing assemblies"
+      ],
+      "landmark_cases": [
+        "Kameshwar Prasad v. State of Bihar (1962)",
+        "Himat Lal K. Shah v. Commissioner of Police (1973)",
+        "In Re: Ramlila Maidan Incident (2012)",
+        "Anita Thakur v. State of J&K (2016)"
+      ]
+    }
+  },
+  "submodule_9": {
+    "title": "Freedom of Association (Article 19(1)(c))",
+    "content": {
+      "basic_concept": "Article 19(1)(c) guarantees to all citizens the right to form associations or unions.",
+      "what_it_includes": [
+        "Right to form political parties",
+        "Right to form trade unions",
+        "Right to form companies, societies, partnerships",
+        "Right to form clubs and organizations",
+        "Right not to join an association"
+      ],
+      "reasonable_restrictions": {
+        "Article_19_4": "This right can be restricted on the grounds of:",
+        "grounds": [
+          "Sovereignty and integrity of India",
+          "Public order",
+          "Morality"
+        ]
+      },
+      "related_laws": [
+        "Trade Unions Act, 1926",
+        "Societies Registration Act, 1860",
+        "Companies Act, 2013",
+        "Unlawful Activities (Prevention) Act, 1967",
+        "Representation of People Act (for political parties)"
+      ],
+      "special_provisions": [
+        "Recognition of collective bargaining",
+        "Rights of trade unions",
+        "Constitutional status of political parties",
+        "Regulation of foreign funding for associations"
+      ],
+      "landmark_cases": [
+        "All India Bank Employees Association v. National Industrial Tribunal (1962)",
+        "Damyanti v. Union of India (1971)",
+        "Indian National Congress (I) v. Institute of Social Welfare (2002)"
+      ]
+    }
+  },
+  "submodule_10": {
+    "title": "Freedom of Movement (Article 19(1)(d-e))",
+    "content": {
+      "basic_concept": "Article 19(1)(d) guarantees the right to move freely throughout the territory of India. Article 19(1)(e) guarantees the right to reside and settle in any part of India.",
+      "what_it_includes": [
+        "Right to travel anywhere within India",
+        "Right to settle or reside anywhere in India",
+        "Right to return to India (for citizens)",
+        "Freedom from unreasonable restrictions on movement"
+      ],
+      "reasonable_restrictions": {
+        "Article_19_5": "These rights can be restricted on the grounds of:",
+        "grounds": [
+          "Interest of general public",
+          "Protection of interests of Scheduled Tribes"
+        ]
+      },
+      "special_provisions": [
+        "Inner Line Permits for certain Northeastern states",
+        "Protected/Restricted Areas near international borders",
+        "Restrictions in disturbed areas",
+        "Special provisions for Kashmir, Himachal Pradesh, etc., regarding property purchase"
+      ],
+      "examples_of_application": [
+        "Removal of travel restrictions between states",
+        "Rights of migrant workers to settle in any state",
+        "Restrictions during pandemic situations",
+        "Curfews and Section 144 orders"
+      ],
+      "landmark_cases": [
+        "Kharak Singh v. State of UP (1963)",
+        "Satwant Singh Sawhney v. D. Ramarathnam (1967)",
+        "Maneka Gandhi v. Union of India (1978)"
+      ]
+    }
+  },
+  "submodule_11": {
+    "title": "Freedom of Profession (Article 19(1)(g))",
+    "content": {
+      "basic_concept": "Article 19(1)(g) guarantees the right to practice any profession or carry on any occupation, trade, or business.",
+      "what_it_includes": [
+        "Right to choose any profession",
+        "Right to establish and run businesses",
+        "Right to practice occupation of choice",
+        "Right to earn livelihood by legal means"
+      ],
+      "reasonable_restrictions": {
+        "Article_19_6": "This right can be restricted on the grounds of:",
+        "grounds": [
+          "Public interest",
+          "Professional or technical qualifications necessary for practicing a profession",
+          "State monopoly in certain sectors"
+        ]
+      },
+      "examples_of_reasonable_restrictions": [
+        "Licensing requirements for certain professions",
+        "Standards and qualifications for doctors, lawyers, etc.",
+        "Environmental regulations for businesses",
+        "Labor laws protecting workers",
+        "Consumer protection laws"
+      ],
+      "recent_developments": [
+        "Recognition of right to dignified livelihood",
+        "Regulation of gig economy workers",
+        "Licensing reforms for ease of doing business",
+        "Recognition of new professions and occupations"
+      ],
+      "landmark_cases": [
+        "Sodan Singh v. NDMC (1989)",
+        "Olga Tellis v. Bombay Municipal Corporation (1985)",
+        "Chintaman Rao v. State of MP (1950)",
+        "Excel Wear v. Union of India (1978)"
+      ]
+    }
+  },
+  "submodule_12": {
+    "title": "Protection in Criminal Cases (Article 20)",
+    "content": {
+      "basic_concept": "Article 20 provides three safeguards to persons accused of crimes:",
+      "safeguards": [
+        "Protection against ex-post-facto laws",
+        "Protection against double jeopardy",
+        "Protection against self-incrimination"
+      ],
+      "protection_against_ex_post_facto_laws": {
+        "Article_20_1": "No person shall be convicted of any offense except for violation of a law in force at the time of the commission of the act",
+        "penalty": "No person shall be subjected to a penalty greater than that prescribed by the law in force at the time of commission of the offense"
+      },
+      "protection_against_double_jeopardy": {
+        "Article_20_2": "No person shall be prosecuted and punished for the same offense more than once"
+      },
+      "protection_against_self_incrimination": {
+        "Article_20_3": "No person accused of any offense shall be compelled to be a witness against himself"
+      },
+      "important_aspects": [
+        "Article 20 rights are available to both citizens and non-citizens",
+        "These rights cannot be suspended even during an emergency",
+        "These protections apply only in criminal cases, not civil proceedings",
+        "The protection against self-incrimination extends to both oral and documentary evidence"
+      ],
+      "recent_developments": [
+        "Issues related to narco-analysis, brain mapping, and polygraph tests",
+        "DNA testing and biometric evidence",
+        "Immunity provisions in new laws",
+        "Recording of confessions under special laws"
+      ],
+      "landmark_cases": [
+        "Selvi v. State of Karnataka (2010)",
+        "Nandini Satpathy v. P.L. Dani (1978)",
+        "State of Bombay v. Kathi Kalu Oghad (1961)"
+      ]
+    }
+  },
+  "submodule_13": {
+    "title": "Right to Life and Personal Liberty (Article 21)",
+    "content": {
+      "basic_concept": "Article 21 states: 'No person shall be deprived of his life or personal liberty except according to procedure established by law.'",
+      "evolution_of_interpretation": [
+        "Narrow interpretation in A.K. Gopalan v. State of Madras (1950)",
+        "Liberal interpretation after Maneka Gandhi v. Union of India (1978)",
+        "Now includes various implied rights as part of right to life"
+      ],
+      "rights_included_under_article_21": [
+        "Right to live with human dignity",
+        "Right to livelihood",
+        "Right to shelter",
+        "Right to health and medical care",
+        "Right to clean environment",
+        "Right to education",
+        "Right to privacy",
+        "Right against inhuman treatment",
+        "Right to legal aid and speedy trial",
+        "Rights of prisoners and under-trials",
+        "Right to die with dignity",
+        "Right to safe working conditions",
+        "Right to water",
+        "Right to electricity",
+        "Right to internet access"
+      ],
+      "procedure_established_by_law": {
+        "initial_interpretation": "Initially interpreted as any procedure laid down by statute",
+        "post_maneka_gandhi_case": "After Maneka Gandhi case, interpreted to mean 'fair, just and reasonable procedure'",
+        "due_process_concept": "Due process concept incorporated through judicial interpretation"
+      },
+      "landmark_cases": [
+        "Maneka Gandhi v. Union of India (1978)",
+        "Francis Coralie Mullin v. Administrator, Union Territory of Delhi (1981)",
+        "Olga Tellis v. Bombay Municipal Corporation (1985)",
+        "Paschim Banga Khet Mazdoor Samity v. State of West Bengal (1996)",
+        "Justice K.S. Puttaswamy v. Union of India (2017)",
+        "Navtej Singh Johar v. Union of India (2018)"
+      ]
+    }
+  },
+  "submodule_14": {
+    "title": "Right to Education (Article 21A)",
+    "content": {
+      "basic_concept": "Article 21A states: 'The State shall provide free and compulsory education to all children of the age of six to fourteen years in such manner as the State may, by law, determine.'",
+      "historical_context": [
+        "Added by the 86th Constitutional Amendment Act, 2002",
+        "Shifted education from Directive Principles to Fundamental Rights",
+        "Implemented through the Right of Children to Free and Compulsory Education (RTE) Act, 2009"
+      ],
+      "key_features_of_rte_act": [
+        "Free and compulsory education for all children between 6-14 years",
+        "25% reservation in private schools for disadvantaged sections",
+        "No capitation fees or screening procedures for admissions",
+        "Prohibition of physical punishment and mental harassment",
+        "Minimum norms and standards for schools",
+        "Qualified and trained teachers",
+        "Child-friendly and child-centered curriculum",
+        "No detention policy up to class 8"
+      ],
+      "implementation_challenges": [
+        "Infrastructure gaps",
+        "Teacher shortages and quality concerns",
+        "Inclusion of children with disabilities",
+        "Quality of education",
+        "Dropout rates",
+        "Monitoring and enforcement"
+      ],
+      "recent_developments": [
+        "Amendment to allow detention policy after Class 5",
+        "Emphasis on learning outcomes",
+        "Extension of RTE to early childhood education and secondary education",
+        "National Education Policy 2020 implications"
+      ],
+      "landmark_cases": [
+        "Society for Un-aided Private Schools of Rajasthan v. Union of India (2012)",
+        "Pramati Educational and Cultural Trust v. Union of India (2014)",
+        "Environmental & Consumer Protection Foundation v. Delhi Administration (2012)"
+      ]
+    }
+  },
+  "submodule_15": {
+    "title": "Protection Against Detention (Article 22)",
+    "content": {
+      "basic_concept": "Article 22 provides safeguards against arbitrary arrest and detention. It also deals with preventive detention laws.",
+      "rights_of_arrested_persons": {
+        "article_22_1_and_2": [
+          "Right to be informed of grounds of arrest",
+          "Right to consult and be defended by a lawyer of choice",
+          "Right to be produced before a magistrate within 24 hours",
+          "No detention beyond 24 hours without magistrate's authority"
+        ]
+      },
+      "exceptions": {
+        "article_22_3": [
+          "Enemy aliens",
+          "Persons arrested or detained under preventive detention laws"
+        ]
+      },
+      "preventive_detention": {
+        "article_22_4_to_7": [
+          "No preventive detention beyond 3 months without approval of an Advisory Board",
+          "Advisory Board must consist of persons qualified to be High Court judges",
+          "Grounds of detention must be communicated to the detainee",
+          "Detainee must be given earliest opportunity to make representation against detention"
+        ]
+      },
+      "preventive_detention_laws": [
+        "National Security Act, 1980",
+        "Prevention of Illicit Traffic in Narcotic Drugs and Psychotropic Substances Act, 1988",
+        "Conservation of Foreign Exchange and Prevention of Smuggling Activities Act, 1974",
+        "Unlawful Activities (Prevention) Act, 1967 (certain provisions)"
+      ],
+      "safeguards_through_judicial_interpretation": [
+        "Grounds of detention must be specific, not vague",
+        "Delay in considering representation violates Article 22",
+        "Grounds must be served in a language understood by detainee",
+        "All relevant material must be provided to detainee"
+      ],
+      "landmark_cases": [
+        "A.K. Roy v. Union of India (1982)",
+        "Haradhan Saha v. State of West Bengal (1975)",
+        "D.K. Basu v. State of West Bengal (1997)"
+      ]
+    }
+  },
+  "submodule_16": {
+    "title": "Right Against Exploitation (Articles 23-24)",
+    "content": {
+      "article_23": {
+        "title": "Prohibition of Traffic in Human Beings and Forced Labor",
+        "basic_concept": "Article 23 prohibits traffic in human beings, begar (forced labor), and similar forms of forced labor. Any contravention is an offense punishable by law.",
+        "what_it_prohibits": [
+          "Trafficking in human beings: Includes slavery, buying and selling of humans, sexual exploitation, etc.",
+          "Begar: Forcing someone to work without payment",
+          "Forced labor: Compelling someone to work against their will",
+          "Bonded labor: Work in return for paying off a debt"
+        ],
+        "exception": "The State can impose compulsory service for public purposes, but cannot discriminate on grounds of religion, race, caste, or class.",
+        "implementation_laws": [
+          "Immoral Traffic (Prevention) Act, 1956",
+          "Bonded Labour System (Abolition) Act, 1976",
+          "Child Labour (Prohibition and Regulation) Act, 1986",
+          "Juvenile Justice Act, 2015",
+          "Trafficking of Persons (Prevention, Protection and Rehabilitation) Bill"
+        ],
+        "landmark_cases": [
+          "People's Union for Democratic Rights v. Union of India (1982)",
+          "Bandhua Mukti Morcha v. Union of India (1984)",
+          "Neeraja Chaudhary v. State of MP (1984)"
+        ]
+      },
+      "article_24": {
+        "title": "Prohibition of Employment of Children in Factories, etc.",
+        "basic_concept": "Article 24 prohibits employment of children below 14 years of age in factories, mines, or any other hazardous employment.",
+        "implementation_laws": [
+          "Child Labour (Prohibition and Regulation) Act, 1986 (amended in 2016)",
+          "Factories Act, 1948",
+          "Mines Act, 1952",
+          "Juvenile Justice (Care and Protection of Children) Act, 2015"
+        ],
+        "key_provisions": [
+          "Complete prohibition of employment of children below 14 years in all occupations",
+          "Prohibition of employment of adolescents (14-18 years) in hazardous occupations",
+          "Exception for children helping family after school hours (except hazardous occupations)",
+          "Increased penalties for violations"
+        ],
+        "recent_developments": [
+          "Harmonization with Right to Education Act",
+          "National Child Labour Project for rehabilitation",
+          "State action plans for elimination of child labor",
+          "Skills training for adolescents"
+        ],
+        "landmark_cases": [
+          "M.C. Mehta v. State of Tamil Nadu (1996)",
+          "Bachpan Bachao Andolan v. Union of India (2011)"
+        ]
+      }
+    }
+  },
+  "submodule_17": {
+    "title": "Freedom of Religion (Articles 25-28)",
+    "content": {
+      "article_25": {
+        "title": "Freedom of Conscience and Free Profession, Practice and Propagation of Religion",
+        "basic_concept": "Article 25 guarantees to all persons freedom of conscience and the right to freely profess, practice, and propagate religion.",
+        "restrictions": [
+          "Public order, morality, and health",
+          "Other provisions of Part III of the Constitution",
+          "Laws regulating economic, financial, political, or secular activity associated with religious practice",
+          "Laws providing for social welfare and reform"
+        ],
+        "state_powers": [
+          "Can regulate secular activities associated with religious practices",
+          "Can throw open Hindu religious institutions to all sections of Hindus",
+          "Can make laws for social welfare and reform"
+        ],
+        "important_aspects": [
+          "Protects religious beliefs and rituals",
+          "Includes right to convert but not right to forcible conversion",
+          "Applies to both citizens and non-citizens"
+        ],
+        "landmark_cases": [
+          "Stanislaus v. State of Madhya Pradesh (1977)",
+          "Bijoe Emmanuel v. State of Kerala (1986)",
+          "Shayara Bano v. Union of India (2017)"
+        ]
+      },
+      "article_26": {
+        "title": "Freedom to Manage Religious Affairs",
+        "basic_concept": "Article 26 gives every religious denomination or section the right to: Establish and maintain institutions for religious and charitable purposes, manage its own affairs in matters of religion, own and acquire movable and immovable property, and administer such property in accordance with law.",
+        "restrictions": "Subject to public order, morality, and health.",
+        "key_aspects": [
+          "Distinction between religious and secular activities",
+          "Religious denominations have autonomy in essential religious matters",
+          "State can regulate secular activities and financial matters"
+        ],
+        "landmark_cases": [
+          "Shirur Mutt case (1954)",
+          "Durgah Committee v. Hussain Ali (1961)",
+          "S.P. Mittal v. Union of India (1983)",
+          "Indian Young Lawyers Association v. State of Kerala (Sabarimala case) (2018)"
+        ]
+      },
+      "article_27": {
+        "title": "Freedom from Payment of Taxes for Promotion of Any Religion",
+        "basic_concept": "Article 27 states that no person shall be compelled to pay any taxes for the promotion or maintenance of any particular religion or religious denomination.",
+        "key_aspects": [
+          "Prohibits state funding for religious promotion",
+          "Prohibits use of tax money for religious purposes",
+          "Reinforces secular character of the state",
+          "Doesn't prohibit general grants to religious institutions for secular purposes"
+        ],
+        "examples_of_application": [
+          "No state tax can be imposed specifically for religious purposes",
+          "Government cannot use tax money to promote a particular religion",
+          "Secular purposes like education or healthcare can receive funding regardless of religious management"
+        ]
+      },
+      "article_28": {
+        "title": "Freedom from Religious Instruction in Certain Educational Institutions",
+        "basic_concept": "Article 28 deals with religious instruction in educational institutions.",
+        "key_provisions": [
+          "No religious instruction shall be provided in institutions wholly maintained out of State funds",
+          "Exception: Institutions established under any endowment where religious instruction is required by the terms of the endowment",
+          "No person attending any educational institution recognized by the State or receiving State aid shall be required to participate in religious instruction or worship without consent (or guardian's consent for minors)"
+        ],
+        "implications": [
+          "Complete prohibition in government schools",
+          "Partial regulation in aided schools",
+          "No restriction on unaided private institutions"
+        ]
+      }
+    }
+  },
+  "submodule_18": {
+    "title": "Cultural and Educational Rights (Articles 29-30)",
+    "content": {
+      "article_29": {
+        "title": "Protection of Interests of Minorities",
+        "basic_concept": "Article 29 protects the language, script, and culture of minorities.",
+        "key_provisions": [
+          "Any section of citizens with a distinct language, script, or culture has the right to conserve the same",
+          "No citizen shall be denied admission to any educational institution maintained or aided by the State on grounds only of religion, race, caste, language, or any of them"
+        ],
+        "important_aspects": [
+          "Protection not limited to religious minorities but extends to linguistic and cultural minorities",
+          "Applies to both minorities and majority groups with distinct culture",
+          "Prevents discrimination in admissions to state-funded educational institutions"
+        ],
+        "landmark_cases": [
+          "State of Madras v. Champakam Dorairajan (1951)",
+          "St. Stephen's College v. University of Delhi (1992)"
+        ]
+      },
+      "article_30": {
+        "title": "Right of Minorities to Establish and Administer Educational Institutions",
+        "basic_concept": "Article 30 gives religious and linguistic minorities the right to establish and administer educational institutions of their choice.",
+        "key_provisions": [
+          "All minorities, whether based on religion or language, have the right to establish and administer educational institutions of their choice",
+          "The State shall not discriminate against any educational institution managed by a minority while granting aid",
+          "In making any law providing for the compulsory acquisition of property of an educational institution established and administered by a minority, the State shall ensure that the compensation amount fixed doesn't restrict or abrogate this right"
+        ],
+        "important_aspects": [
+          "Recognition of minority status determined by state or national level",
+          "Includes right to choose management, teachers, staff, students",
+          "Right to set medium of instruction",
+          "Subject to reasonable regulations"
+        ],
+        "landmark_cases": [
+          "St. Xavier's College v. State of Gujarat (1974)",
+          "TMA Pai Foundation v. State of Karnataka (2002)",
+          "P.A. Inamdar v. State of Maharashtra (2005)",
+          "Society for Unaided Private Schools v. Union of India (2012)"
+        ]
+      }
+    }
+  },
+  "submodule_19": {
+    "title": "Right to Constitutional Remedies (Article 32)",
+    "content": {
+      "basic_concept": "Article 32 provides the right to approach the Supreme Court directly for enforcement of Fundamental Rights. Dr. B.R. Ambedkar called it 'the heart and soul of the Constitution.'",
+      "key_provisions": [
+        "Right to move the Supreme Court for enforcement of Fundamental Rights",
+        "Supreme Court's power to issue directions, orders, or writs for enforcement of Fundamental Rights",
+        "Parliament can empower any other court to issue writs without affecting the Supreme Court's powers",
+        "This right cannot be suspended except as provided by the Constitution"
+      ],
+      "types_of_writs": {
+        "habeas_corpus": {
+          "meaning": "\"Produce the body\"",
+          "purpose": "To release a person who has been unlawfully detained",
+          "scope": "Available against both public authorities and private individuals",
+          "key_feature": "Can be filed by any person, not just the detainee"
+        },
+        "mandamus": {
+          "meaning": "\"We command\"",
+          "purpose": "To order a public authority to perform its public duty",
+          "scope": "Issued against public officials, government, corporations, or lower courts",
+          "key_feature": "Not issued against private individuals or the President/Governors"
+        },
+        "prohibition": {
+          "purpose": "To prohibit a lower court from proceeding with a case beyond its jurisdiction",
+          "scope": "Preventive in nature, issued during pendency of proceedings",
+          "key_feature": "Only against judicial or quasi-judicial authorities"
+        },
+        "certiorari": {
+          "purpose": "To quash orders of lower courts or tribunals that have acted beyond jurisdiction",
+          "scope": "Corrective in nature, issued after the order has been passed",
+          "key_feature": "Can review issues of jurisdiction and errors of law apparent on record"
+        },
+        "quo_warranto": {
+          "meaning": "\"By what authority\"",
+          "purpose": "To question the legality of a claim to a public office",
+          "scope": "Against public offices of substantive nature created by statute or constitution",
+          "key_feature": "Can be filed by any person, even if not personally aggrieved"
+        }
+      },
+      "difference_between_article_32_and_article_226": {
+        "article_32": {
+          "description": "Can be invoked only for enforcement of Fundamental Rights"
+        },
+        "article_226": {
+          "description": "Can be invoked for any legal right, not just Fundamental Rights"
+        },
+        "supreme_court": {
+          "article_32": "Supreme Court cannot refuse to entertain petitions under Article 32",
+          "article_226": "High Courts have wider discretion under Article 226"
+        }
+      },
+      "limitations_and_restrictions": [
+        "Alternative remedy doctrine",
+        "Locus standi (standing) requirements",
+        "Res judicata principle",
+        "Limitations during emergency"
+      ],
+      "landmark_cases": [
+        "Bandhua Mukti Morcha v. Union of India (1984)",
+        "S.P. Gupta v. Union of India (1982)",
+        "L. Chandra Kumar v. Union of India (1997)",
+        "A.K. Gopalan v. State of Madras (1950)"
+      ]
+    }
+  },
+  "submodule_20": {
+    "title": "Restrictions on Fundamental Rights",
+    "content": {
+      "basic_concept": "Fundamental Rights in India are not absolute and are subject to reasonable restrictions imposed by the state.",
+      "types_of_restrictions": {
+        "express_restrictions": {
+          "description": "Specifically mentioned in the Constitution",
+          "examples": [
+            "Public order",
+            "Security of state",
+            "Friendly relations with foreign states"
+          ]
+        },
+        "implied_restrictions": {
+          "description": "Derived through judicial interpretation",
+          "examples": [
+            "Restrictions based on basic structure doctrine"
+          ]
+        }
+      },
+      "restrictions_during_emergency": {
+        "article_358": "Suspension of Article 19 during national emergency",
+        "article_359": "Suspension of enforcement of specified Fundamental Rights during emergency",
+        "exception": "No suspension of Articles 20 and 21 during any emergency"
+      },
+      "doctrine_of_reasonable_restrictions": {
+        "description": "Reasonable restrictions must satisfy specific criteria.",
+        "criteria": [
+          "Must have proper legislative authority",
+          "Must serve a legitimate aim",
+          "Must be proportionate to the need",
+          "Must not be arbitrary or excessive",
+          "Must follow procedural safeguards"
+        ]
+      },
+      "test_of_reasonableness": {
+        "factors": [
+          "Nature of the right violated",
+          "Underlying purpose of the restrictions",
+          "Extent and urgency of the evil sought to be remedied",
+          "Disproportion of the imposition",
+          "Prevailing conditions at the time"
+        ]
+      },
+      "limitations_on_parliaments_power_to_restrict": {
+        "limitations": [
+          "Basic structure doctrine",
+          "Principle of constitutional morality",
+          "International obligations",
+          "Judicial review"
+        ]
+      },
+      "recent_developments": {
+        "developments": [
+          "Proportionality test in restricting Fundamental Rights",
+          "Evolving standards of reasonableness",
+          "Greater scrutiny for restrictions on Articles 14, 19, and 21",
+          "Balancing rights with state interests"
+        ]
+      },
+      "landmark_cases": [
+        "Kesavananda Bharati v. State of Kerala (1973)",
+        "Maneka Gandhi v. Union of India (1978)",
+        "Modern Dental College v. State of MP (2016)",
+        "K.S. Puttaswamy v. Union of India (2017)"
+      ]
+    }
+  }
+  }
+}

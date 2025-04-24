@@ -1,0 +1,424 @@
+{
+    "main_module": "Preamble",
+    "overview_content": {
+      "description": "The Preamble is the introduction to our Constitution. It explains the goals and basic values of India as a nation. Think of it as the 'soul' of our Constitution. The Preamble tells us who made the Constitution (the people), what kind of country India is (sovereign, socialist, secular, democratic republic), and what values we believe in (justice, liberty, equality, and fraternity).",
+      "adoption_date": "November 26, 1949",
+      "42nd_amendment": {
+        "year": 1976,
+        "added_words": ["Socialist", "Secular", "Integrity"]
+      },
+      "significance": "Understanding the Preamble helps us understand the rest of the Constitution better.",
+      "visual_note": "[Include image of the original Preamble text here]"
+    },
+      "submodule_1": {
+        "title": "Source of Authority - 'We, the People of India'",
+        "content": {
+          "explanation": "The Preamble starts with 'We, the People of India.' This tells us something very important - the Constitution gets its power from the citizens of India, not from any king or ruler.",
+          "historical_context": "Before independence, India was ruled by the British. Laws came from the British government or the king/queen. But our Constitution comes from the Indian people.",
+          "meaning": [
+            "The government works for the people",
+            "Leaders must listen to citizens",
+            "Every Indian has a say in how the country is run"
+          ],
+          "real_life_examples": [
+            "When you vote in elections, you're using the power given to you as part of 'We, the people'",
+            "When citizens protest peacefully against laws they don't agree with",
+            "When people file court cases to protect their rights"
+          ],
+          "inspiration": "The phrase 'We, the People' was inspired by the American Constitution, which starts the same way.",
+          "principle": "Popular sovereignty—the principle that ultimate authority rests with the citizens.",
+          "modern_reflections": [
+            "Universal adult suffrage: every adult citizen has the right to vote regardless of education, wealth, gender, or social status",
+            "Constitutional amendments must follow proper procedures reflecting the people's will through their elected representatives"
+          ]
+        }
+      },
+      "submodule_2": {
+    "title": "SOVEREIGN",
+    "content": {
+      "definition": "Sovereign means that India makes its own decisions. No other country can tell India what to do. India has complete freedom to make its own laws and policies.",
+      "historical_context": "For almost 200 years, Britain ruled India. All major decisions were made by the British. After independence in 1947, India became sovereign - free to chart its own course.",
+      "modern_significance": [
+        "India decides its own foreign policy",
+        "India makes its own laws",
+        "No other country can interfere in India's internal matters",
+        "India can join international organizations by choice"
+      ],
+      "examples": [
+        "Developing our own nuclear program despite international pressure",
+        "Creating our own space program",
+        "Making independent decisions during international conflicts",
+        "Conducting our own elections without outside supervision"
+      ],
+      "territorial_implications": {
+        "full_control": "India has full control over its territory, from the Himalayas to the Indian Ocean",
+        "authority": [
+          "Protect its borders",
+          "Manage natural resources",
+          "Determine how land is used"
+        ],
+        "maritime_zones": {
+          "territorial_waters": "12 nautical miles from the coast",
+          "exclusive_economic_zone": "Up to 200 nautical miles"
+        }
+      },
+      "international_engagement": "India can choose to sign international treaties and agreements, but these cannot override our Constitution. Even when India collaborates internationally, it maintains its sovereign decision-making power."
+    }
+  },
+  "submodule_3": {
+    "title": "SOCIALIST",
+    "content": {
+      "historical_context": "\"Socialist\" was added to the Preamble in 1976. It means India aims to reduce inequality. The government works to ensure that wealth and resources are fairly distributed and not controlled by just a few people.",
+      "economic_model": {
+        "description": "India follows a mixed economy, not textbook socialism.",
+        "features": [
+          "Both government and private businesses",
+          "Focus on reducing poverty and inequality",
+          "Programs to help disadvantaged groups",
+          "Public services like healthcare and education"
+        ]
+      },
+      "practical_implementation": [
+        "Land reforms to give land to farmers who work on it",
+        "Public schools and hospitals",
+        "Government banks and services",
+        "Programs like MGNREGA that guarantee work",
+        "Reservations for disadvantaged groups",
+        "Food security programs"
+      ],
+      "constitutional_basis": {
+        "reference": "Directive Principles of State Policy",
+        "goals": [
+          "Fair distribution of community resources",
+          "Preventing concentration of wealth",
+          "Equal pay for equal work",
+          "Protection of workers' rights"
+        ]
+      },
+      "ideological_influences": "India's socialism is influenced by both Gandhi's ideas and modern welfare state concepts. It aims to balance economic growth with social justice, ensuring development benefits all citizens, not just a privileged few."
+    }
+  },
+  "submodule_4": {
+    "title": "SECULAR",
+    "content": {
+      "definition": "\"Secular\" means that India doesn't have an official religion. The government treats all religions equally and with respect. People are free to practice any religion they choose.",
+      "principles_of_indian_secularism": [
+        "The government doesn't favor any religion",
+        "All citizens have religious freedom",
+        "Religious minorities are protected",
+        "Government doesn't interfere in religious matters unless necessary for reform",
+        "Religion and citizenship are separate"
+      ],
+      "constitutional_protections": [
+        "Freedom to practice any religion",
+        "Freedom to set up religious institutions",
+        "No religious instruction in government schools",
+        "Special protections for minority communities"
+      ],
+      "real_life_examples": [
+        "Religious holidays of different faiths are national holidays",
+        "Different religions have their own personal laws",
+        "Government helps maintain places of worship",
+        "Religious education is allowed in private institutions"
+      ],
+      "interpretation_in_context": {
+        "indian_secularism": "Equal respect for all religions (sarva dharma sambhava)",
+        "distinction_from_western_secularism": "In the West, secularism implies strict separation between religion and state. In India, the state can engage with all religions impartially."
+      }
+    }
+  },
+  "submodule_5": {
+    "title": "DEMOCRATIC",
+    "content": {
+      "definition": "\"Democratic\" means that power belongs to the people. Citizens elect their representatives through regular elections. These representatives then make laws and run the government.",
+      "key_features_of_indian_democracy": [
+        "Universal adult suffrage (all citizens 18+ can vote)",
+        "Regular elections",
+        "Multiple political parties",
+        "Freedom of speech and expression",
+        "Right to form associations",
+        "Peaceful transfer of power"
+      ],
+      "three_levels_of_democracy": {
+        "national_level": "Parliament makes laws for the whole country",
+        "state_level": "State Assemblies make laws for individual states",
+        "local_level": "Panchayats and Municipalities make decisions for local areas"
+      },
+      "how_indian_democracy_works": [
+        "Elections are held every five years (or sooner if needed)",
+        "The Election Commission organizes free and fair elections",
+        "Any eligible citizen can contest elections",
+        "The party or coalition with majority forms the government",
+        "Opposition parties provide checks and balances"
+      ],
+      "democracy_beyond_elections": [
+        "Fundamental rights",
+        "Independent judiciary",
+        "Free press",
+        "Active civil society organizations",
+        "Public consultations",
+        "Peaceful protests",
+        "Engagement with elected representatives"
+      ],
+      "federal_structure_and_significance": "Democratic values are reflected in India's federal structure, where power is divided between the center and the states to ensure regional autonomy and national unity.",
+      "notable_fact": "India has over 900 million eligible voters, making its elections the largest organized human exercise in the world."
+    }
+  },
+  "submodule_6": {
+    "title": "REPUBLIC",
+    "content": {
+      "definition": "\"Republic\" means that the head of state (the President) is elected, not a king or queen who inherits the position. In India, we elect our President every five years.",
+      "difference_between_republic_and_monarchy": {
+        "republic": "Head of state is elected for a fixed term",
+        "monarchy": "King or queen inherits the position and rules for life"
+      },
+      "features_of_india_as_a_republic": [
+        "President is indirectly elected by an electoral college",
+        "Fixed five-year term for the President",
+        "President can be impeached for violating the Constitution",
+        "No hereditary positions in government",
+        "All public officials are answerable to the people"
+      ],
+      "how_the_president_is_elected": [
+        "Members of Parliament and State Legislatures vote",
+        "This system ensures representation from all parts of India",
+        "The President takes an oath to protect the Constitution"
+      ],
+      "republican_principles_in_practice": "Public offices are open to all citizens who meet eligibility criteria, regardless of birth, wealth, or social status. All authority comes from the Constitution, and officials are accountable to the people.",
+      "role_of_the_president": "The President is the ceremonial head and guardian of the Constitution, acting on the advice of the Council of Ministers. This ensures executive decisions reflect the will of elected representatives.",
+      "historical_context": "When India became independent, unlike many former British colonies that retained the British monarch, India chose to become a republic, fully breaking away from colonial rule."
+    }
+  },
+  "submodule_7": {
+    "title": "JUSTICE",
+    "content": {
+      "definition": "\"Justice\" in the Preamble means fairness in all aspects of life - social, economic, and political. It means removing inequality and ensuring everyone gets what they deserve.",
+      "types_of_justice": {
+        "social_justice": {
+          "features": [
+            "Equal treatment regardless of caste, religion, gender",
+            "Ending discrimination and untouchability",
+            "Protecting the rights of marginalized groups"
+          ],
+          "examples": [
+            "Laws against caste discrimination",
+            "Protection for women and children"
+          ]
+        },
+        "economic_justice": {
+          "features": [
+            "Fair distribution of wealth and resources",
+            "Equal pay for equal work",
+            "Protection from exploitation"
+          ],
+          "examples": [
+            "Minimum wage laws",
+            "Land reforms",
+            "Anti-poverty programs"
+          ]
+        },
+        "political_justice": {
+          "features": [
+            "Equal political rights for all citizens",
+            "Equal opportunity to participate in politics",
+            "Equal access to government services"
+          ],
+          "examples": [
+            "Universal adult suffrage",
+            "Reservations in local government"
+          ]
+        }
+      },
+      "justice_system": {
+        "description": "India's justice system includes courts from the village level to the Supreme Court. Access to justice is a fundamental right.",
+        "features": [
+          "Free legal aid for disadvantaged sections",
+          "Special courts and tribunals for issues like family disputes, labor conflicts, and consumer complaints"
+        ]
+      },
+      "principles": {
+        "procedural_justice": "Fair legal and administrative processes",
+        "substantive_justice": "Fair outcomes that address inequalities"
+      },
+      "affirmative_action": "Justice in India recognizes historical injustices and uses affirmative action to correct them, especially for marginalized communities.",
+      "equality_principle": "Justice means treating equals equally and unequals unequally. Special provisions are sometimes needed for fairness."
+    }
+  },
+  "submodule_8": {
+    "title": "LIBERTY",
+    "content": {
+      "definition": "\"Liberty\" means freedom – freedom to think, express opinions, believe in any religion, and live with dignity. The Constitution protects these freedoms while ensuring they don't harm others.",
+      "types_of_liberty": {
+        "freedom_of_speech_and_expression": {
+          "features": [
+            "Right to express opinions freely",
+            "Freedom of press and media",
+            "Right to peacefully criticize the government"
+          ],
+          "examples": [
+            "Newspapers",
+            "Blogs",
+            "Peaceful protests"
+          ]
+        },
+        "freedom_of_assembly": {
+          "features": [
+            "Right to gather peacefully without arms",
+            "Freedom to form groups and associations"
+          ],
+          "examples": [
+            "Public meetings",
+            "Forming clubs or organizations"
+          ]
+        },
+        "religious_liberty": {
+          "features": [
+            "Freedom to practice any religion",
+            "Freedom to establish religious institutions",
+            "Protection of religious minorities"
+          ],
+          "examples": [
+            "Celebrating religious festivals",
+            "Building places of worship"
+          ]
+        },
+        "personal_liberty": {
+          "features": [
+            "Freedom from arbitrary arrest",
+            "Right to privacy",
+            "Freedom of movement"
+          ],
+          "examples": [
+            "Right to travel anywhere in India",
+            "Protection from unlawful detention"
+          ]
+        }
+      },
+      "constitutional_safeguards": {
+        "description": "Liberty is protected through constitutional safeguards including:",
+        "features": [
+          "Fundamental rights",
+          "Separation of powers",
+          "Independent judiciary",
+          "Democratic governance"
+        ]
+      },
+      "reasonable_restrictions": "These freedoms are subject to reasonable limits to protect others' rights and maintain public order. For example, speech that spreads hatred or incites violence is restricted.",
+      "judicial_protection": {
+        "tools": [
+          "Habeas corpus orders to prevent illegal detention",
+          "Right to constitutional remedies under Article 32"
+        ],
+        "guardian_role": "The independent judiciary acts as the guardian of liberties."
+      }
+    }
+  },
+  "submodule_9": {
+    "title": "EQUALITY",
+    "content": {
+      "definition": "\"Equality\" means all citizens are equal before the law, and have equal opportunities regardless of religion, race, caste, gender, or place of birth.",
+      "dimensions_of_equality": {
+        "equality_before_law": {
+          "features": [
+            "Same laws apply to everyone",
+            "No one is above the law",
+            "Equal protection for all citizens"
+          ],
+          "example": "A minister and an ordinary citizen face the same legal process"
+        },
+        "social_equality": {
+          "features": [
+            "No discrimination based on caste, religion, gender",
+            "Abolition of untouchability",
+            "Respect for all individuals"
+          ],
+          "example": "Access to public places for everyone"
+        },
+        "economic_equality": {
+          "features": [
+            "Equal opportunities for livelihood",
+            "Fair wages and working conditions",
+            "Reduction of income gaps"
+          ],
+          "example": "Equal pay for equal work"
+        },
+        "political_equality": {
+          "features": [
+            "One person, one vote",
+            "Right to contest elections",
+            "Equal participation in democracy"
+          ],
+          "example": "Universal adult suffrage regardless of education or property"
+        }
+      },
+      "formal_and_substantive_equality": {
+        "description": "Equality in India is both formal (equality before law) and substantive (equality of opportunity and outcomes).",
+        "features": [
+          "Constitution prohibits discrimination",
+          "Allows positive discrimination (affirmative action) for disadvantaged groups"
+        ]
+      },
+      "constitutional_provisions": {
+        "articles": "Articles 14–18",
+        "provisions": [
+          "Prohibit discrimination",
+          "Abolish untouchability",
+          "Allow for affirmative action"
+        ]
+      },
+      "supporting_laws": [
+        "Equal Remuneration Act",
+        "Rights of Persons with Disabilities Act",
+        "Prevention of Atrocities against SC/ST Act"
+      ],
+      "note_on_fairness": "Sometimes, treating everyone exactly the same doesn't create true equality. That's why the Constitution allows special provisions for women, children, and socially disadvantaged groups."
+    }
+  },
+  "submodule_10": {
+    "title": "FRATERNITY",
+    "content": {
+      "definition": "\"Fraternity\" means a sense of brotherhood and belonging among all Indians. It's about unity despite our differences in religion, language, culture, and region.",
+      "key_aspects": {
+        "dignity_of_the_individual": {
+          "features": [
+            "Respect for every person's worth and rights",
+            "Protection of human dignity",
+            "Rejection of discrimination"
+          ],
+          "examples": [
+            "Laws against harassment",
+            "Protection of privacy"
+          ]
+        },
+        "unity_and_integrity_of_the_nation": {
+          "features": [
+            "Harmony among different regions and communities",
+            "Preservation of India's territorial unity",
+            "National integration despite diversity"
+          ],
+          "examples": [
+            "National symbols",
+            "Integration programs"
+          ]
+        }
+      },
+      "importance_of_fraternity": {
+        "description": "Fraternity helps prevent discrimination and exploitation by fostering mutual respect among citizens. It creates social cohesion despite differences in language, religion, caste, or region.",
+        "interconnection": "Individual dignity and national unity are interconnected—we need both for a harmonious society."
+      },
+      "42nd_amendment": {
+        "description": "The phrase \"unity and integrity of the Nation\" was added to the Preamble by the 42nd Amendment in 1976.",
+        "purpose": "Emphasizing the importance of national integration amid regional diversity."
+      },
+      "initiatives_to_promote_fraternity": [
+        "Ek Bharat Shreshtha Bharat program",
+        "Cultural exchanges between states",
+        "Celebration of national festivals",
+        "Common national symbols",
+        "Promotion of national languages"
+      ],
+      "national_motto": "Unity in Diversity - we are different in many ways but united as Indians."
+    }
+  }
+  }
+  
