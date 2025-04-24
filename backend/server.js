@@ -6,6 +6,7 @@ import cookieParser from "cookie-parser";
 import connectToDatabase from './config/database.js';
 import userRouter from './routes/userRoute.js';
 import testRouter from './routes/testRoute.js'
+import contenrRouter from './routes/contentRoute.js'
 const app = express();
 const corsOptions = {
     origin: true,
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use('/api/users', userRouter)
+app.use('/api/content',contenrRouter)
 app.use('/api/test', testRouter)
 connectToDatabase();
 

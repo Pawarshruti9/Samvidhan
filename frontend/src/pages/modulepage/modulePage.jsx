@@ -15,6 +15,7 @@ const ModulePage = () => {
     e.preventDefault();
     try {
       const response = await axios.post("http://localhost:4000/api/test/statusstarted", { course: moduleName }, { withCredentials: true });
+  
       console.log(response.data);
       toast.success("Module started successfully!", { autoClose: 2000 });
       setTimeout(() => {
