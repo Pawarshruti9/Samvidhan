@@ -4,21 +4,30 @@ import "./navbar.css";
 import Logo from "../../assets/logo/logo.png";
 import { useTranslation } from "react-i18next";
 
-
 const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [languageOpen, setLanguageOpen] = useState(false);
-  const { t, i18n } = useTranslation();
-  const navigate = useNavigate(); // Use navigate for routing
+  const [searchQuery, setSearchQuery] = useState(""); // 🔍 Search state
+  const [searchActive, setSearchActive] = useState(false); // Track search icon toggle
 
-  // Function to switch language
+  const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
+
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
   };
 
-  // Function to navigate to ModulePage with a specific module
   const goToModule = (moduleName) => {
     navigate(`/module/${moduleName}`);
+  };
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      navigate(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
+      setSearchQuery("");
+      setSearchActive(false); // Close the search after submission
+    }
   };
 
   return (
@@ -37,6 +46,7 @@ const Navbar = () => {
             <a onClick={() => goToModule("fundamental-rights")}>{t("navbar.fundamentalRights")}</a>
             <a onClick={() => goToModule("directive-principles")}>{t("navbar.directivePrinciples")}</a>
             <a onClick={() => goToModule("fundamental-duties")}>{t("navbar.fundamentalDuties")}</a>
+
             {/* Learn & Play Dropdown */}
             <div
               className="dropdown"
@@ -57,6 +67,32 @@ const Navbar = () => {
           </div>
         </div>
 
+        {/* 🔍 Clickable Search Icon */}
+        <div className="search-wrapper">
+          <span
+            className="search-icon"
+            onClick={() => setSearchActive(!searchActive)} // Toggle input visibility
+          >
+            🔍
+          </span>
+
+          {/* Search Form (Only shows when searchActive is true) */}
+          {searchActive && (
+            <form className="search-form" onSubmit={handleSearch}>
+              <input
+                type="text"
+                placeholder={t("ask") || "Search..."}
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="search-input"
+              />
+              <button type="submit" className="search-go">
+                {t("go") || "Go"}
+              </button>
+            </form>
+          )}
+        </div>
+
         {/* Language Selector */}
         <div 
           className="language-selector"
@@ -69,17 +105,13 @@ const Navbar = () => {
             <button onClick={() => changeLanguage("hi")}>{t("navbar.hindi")}</button>
           </div>
         </div>
-           {/* Login Button with Navigation */}
-           <div>
+
+        {/* Login Button */}
+        <div>
           <button className="login-button" onClick={() => navigate("/login")}>
             {t("Login")}
           </button>
         </div>
-        {/* <div>
-          <button className="register-button" onClick={() => navigate("/register")}>
-            {t("Register")}
-          </button>
-        </div> */}
       </div>
     </nav>
   );

@@ -208,3 +208,68 @@
 .register-button:hover {
     background: #873c02;
 }
+
+
+/* Search Wrapper */
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .search-icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-left: 15px;
+  }
+  
+  /* Hidden search input */
+  .search-form {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 2px solid #0b2d2e;
+    border-radius: 30px;
+    padding: 4px 10px;
+    margin-left: 10px;
+    animation: slideIn 0.3s ease-in-out forwards;
+  }
+  
+  /* Input */
+  .search-input {
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    padding: 8px;
+    color: #0b2d2e;
+    width: 160px;
+    background: transparent;
+  }
+  
+  /* Go Button */
+  .search-go {
+    background-color: #0b2d2e;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .search-go:hover {
+    background-color: #873c02;
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: scaleX(0);
+      opacity: 0;
+    }
+    to {
+      transform: scaleX(1);
+      opacity: 1;
+    }
+  }
+  
