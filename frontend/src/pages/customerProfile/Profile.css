@@ -1,0 +1,70 @@
+.profile-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px; /* Add padding to account for fixed navbar */
+}
+
+.profile-content {
+    flex: 1;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.profile-content h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.profile-info {
+    background-color: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-field {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.profile-field label {
+    font-weight: 600;
+    color: #555;
+}
+
+.profile-field span {
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.loading, .error {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.error {
+    color: #dc3545;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .profile-container {
+        padding-top: 80px; /* Adjust for smaller screens */
+    }
+    
+    .profile-content {
+        padding: 1rem;
+    }
+
+    .profile-info {
+        padding: 1.5rem;
+    }
+} 

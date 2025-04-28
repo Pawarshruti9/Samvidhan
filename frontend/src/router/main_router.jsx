@@ -7,7 +7,7 @@ import ClientLogin from '../pages/customerProfile/loginPage.jsx';
 import Register from '../pages/customerProfile/registerPage.jsx';
 import SubmodulePage from '../pages/submodulepage/submodulePage.jsx';
 import QuizPage from '../pages/quizpage/quizPage.jsx';
-
+import Profile from '../components/profile/Profile.jsx';
 
 const Main_Router = () => {
   return (
@@ -19,6 +19,7 @@ const Main_Router = () => {
       <Route path="/history" element={<HistoryPage />} />
       <Route path="/login" element={<ClientLogin />} />
       <Route path="/register" element={<Register />} />
+      <Route path="/profile" element={<Profile />} />
     </Routes>
   );
 };

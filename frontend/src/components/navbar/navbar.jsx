@@ -112,6 +112,13 @@ const Navbar = () => {
             {t("Login")}
           </button>
         </div>
+
+        {/* Profile Button */}
+        <div>
+          <button className="profile-button" onClick={() => navigate("/profile")}>
+            {t("Profile")}
+          </button>
+        </div>
       </div>
     </nav>
   );

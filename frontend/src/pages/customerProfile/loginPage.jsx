@@ -14,27 +14,55 @@ const ClientLogin = () => {
         e.preventDefault();
 
         try {
+            console.log("Attempting login...");
             const response = await axios.post(
                 "http://localhost:4000/api/users/login",
                 { email, password },
-                { withCredentials: true }
+                { 
+                    withCredentials: true,
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    }
+                }
             );
 
-            console.log(response.data);
+            console.log("Login response:", response.data);
 
             if (response.data.success) {
+                console.log("Login successful, redirecting to profile...");
                 toast.success("Login successful!", { autoClose: 2000 });
 
-                // Delay navigation slightly to ensure toast is visible
+                // Store user data in localStorage
+                localStorage.setItem('user', JSON.stringify(response.data.user));
+                
+                // Redirect to profile page after successful login
                 setTimeout(() => {
-                    navigate("/");
+                    console.log("Navigating to profile page...");
+                    navigate("/profile", { replace: true });
                 }, 2000);
+            } else {
+                console.log("Login failed:", response.data.message);
+                toast.error(response.data.message || "Login failed");
             }
         } catch (error) {
-            toast.error(
-                error.response?.data?.message || "Invalid credentials. Please try again.",
-                { autoClose: 2000 }
-            );
+            console.error("Login error:", error);
+            if (error.response) {
+                // The request was made and the server responded with a status code
+                // that falls out of the range of 2xx
+                console.error("Error response:", error.response.data);
+                console.error("Error status:", error.response.status);
+                console.error("Error headers:", error.response.headers);
+                toast.error(error.response.data.message || "Login failed");
+            } else if (error.request) {
+                // The request was made but no response was received
+                console.error("Error request:", error.request);
+                toast.error("Network error. Please check your connection.");
+            } else {
+                // Something happened in setting up the request that triggered an Error
+                console.error("Error message:", error.message);
+                toast.error("An error occurred. Please try again.");
+            }
         }
     };
 

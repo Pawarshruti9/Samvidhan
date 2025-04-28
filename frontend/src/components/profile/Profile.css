@@ -1,0 +1,116 @@
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 115vh;
+    padding: 2rem;
+    background-color: #f4f4f4;
+}
+
+.profile-card {
+    width: 50%;
+    max-width: 700px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+.profile-card h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.profile-info {
+    margin-bottom: 2rem;
+}
+
+.info-group {
+    display: flex;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.info-group label {
+    font-weight: bold;
+    width: 150px;
+    color: #666;
+}
+
+.info-group span {
+    color: #333;
+}
+
+.progress-section h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.progress-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.progress-item {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.progress-item h3 {
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.status {
+    padding: 0.5rem;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.status.started {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.status.inprogress {
+    background-color: #cce5ff;
+    color: #004085;
+}
+
+.status.completed {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status.not-started {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.loading {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    padding: 2rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .profile-container {
+        padding-top: 80px; /* Adjust for smaller screens */
+    }
+    
+    .profile-card {
+        padding: 1.5rem;
+    }
+
+    .progress-grid {
+        grid-template-columns: 1fr;
+    }
+} 
