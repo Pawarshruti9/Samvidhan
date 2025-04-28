@@ -113,11 +113,9 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Profile Button */}
-        <div>
-          <button className="profile-button" onClick={() => navigate("/profile")}>
-            {t("Profile")}
-          </button>
+        {/* Profile Emoji */}
+        <div className="profile-emoji" onClick={() => navigate("/profile")}>
+          👤
         </div>
       </div>
     </nav>

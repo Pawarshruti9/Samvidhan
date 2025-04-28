@@ -64,8 +64,18 @@ p {
     display: block;
     color: #007bff;
     text-decoration: none;
+    margin-bottom: 10px;
 }
 
 .links a:hover {
     text-decoration: underline;
+}
+
+.admin-link {
+    color: #dc3545 !important;
+    font-weight: 600;
+}
+
+.admin-link:hover {
+    color: #c82333 !important;
 }

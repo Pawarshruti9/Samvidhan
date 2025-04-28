@@ -273,6 +273,28 @@
 .login-button:hover {
     background: #873c02;
 }
+
+/* Profile Emoji */
+.profile-emoji {
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 8px;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #a6d2d4;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.profile-emoji:hover {
+    transform: scale(1.1);
+    background: #873c02;
+}
+
 .register-button {
     background: #0b2d2e;
     color: white;
@@ -287,7 +309,6 @@
 .register-button:hover {
     background: #873c02;
 }
-
 
 /* Search Wrapper */
 .search-wrapper {

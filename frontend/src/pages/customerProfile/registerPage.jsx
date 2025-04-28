@@ -11,7 +11,7 @@ const Register = () => {
     const [password, setPassword] = useState("");
     const [age, setAge] = useState("");
     const [phone, setPhone] = useState("");
-    const [role, setRole] = useState("user"); // Default role
+    const [role, setRole] = useState("user");
     const navigate = useNavigate();
 
     // Handle Form Submission
@@ -29,17 +29,25 @@ const Register = () => {
                     age,
                     phone,
                 },
-                { withCredentials: true }
+                { 
+                    withCredentials: true,
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    }
+                }
             );
 
-            console.log(response);
-
-            toast.success("Registration successful!", { autoClose: 2000 });
-
-            // Delay navigation slightly to ensure toast is visible
-            setTimeout(() => {
-                navigate("/");
-            }, 2000);
+            if (response.data.success) {
+                toast.success("Registration successful!", { autoClose: 2000 });
+                setTimeout(() => {
+                    if (role === 'admin') {
+                        navigate("/admin/dashboard");
+                    } else {
+                        navigate("/");
+                    }
+                }, 2000);
+            }
         } catch (error) {
             toast.error(error.response?.data?.message || "Something went wrong", { autoClose: 2000 });
         }
@@ -112,7 +120,7 @@ const Register = () => {
                     <label>Role</label>
                     <select value={role} onChange={(e) => setRole(e.target.value)}>
                         <option value="user">User</option>
-                        <option value="seller">Seller</option>
+                        <option value="admin">Admin</option>
                     </select>
                 </div>
 

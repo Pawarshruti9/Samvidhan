@@ -8,6 +8,8 @@ import Register from '../pages/customerProfile/registerPage.jsx';
 import SubmodulePage from '../pages/submodulepage/submodulePage.jsx';
 import QuizPage from '../pages/quizpage/quizPage.jsx';
 import Profile from '../components/profile/Profile.jsx';
+import AdminDashboard from '../pages/admin/AdminDashboard.jsx';
+import AdminLogin from '../pages/admin/AdminLogin.jsx';
 
 const Main_Router = () => {
   return (
@@ -20,6 +22,8 @@ const Main_Router = () => {
       <Route path="/login" element={<ClientLogin />} />
       <Route path="/register" element={<Register />} />
       <Route path="/profile" element={<Profile />} />
+      <Route path="/admin/login" element={<AdminLogin />} />
+      <Route path="/admin/dashboard" element={<AdminDashboard />} />
     </Routes>
   );
 };
