@@ -6,13 +6,14 @@ import cookieParser from "cookie-parser";
 import connectToDatabase from './config/database.js';
 import userRouter from './routes/userRoute.js';
 import testRouter from './routes/testRoute.js'
-import contenrRouter from './routes/contentRoute.js'
+import contentRouter from './routes/contentRoute.js'
 
 const app = express();
 
 // Debugging middleware
 app.use((req, res, next) => {
     console.log(`${req.method} ${req.url}`);
+    console.log('Request body:', req.body);
     next();
 });
 
@@ -48,18 +49,13 @@ app.use((err, req, res, next) => {
     console.error('Error:', err);
     console.error('Request URL:', req.url);
     console.error('Request Method:', req.method);
-    console.error('Request Body:', req.body);
-    res.status(500).json({ 
-        success: false, 
-        message: 'Something went wrong!',
-        error: err.message 
-    });
+    res.status(500).json({ error: 'Internal Server Error' });
 });
 
 // Routes
 app.use('/api/users', userRouter);
-app.use('/api/content', contenrRouter);
 app.use('/api/test', testRouter);
+app.use('/api/content', contentRouter);
 
 // Debug route registration
 console.log('Registered routes:');
@@ -85,6 +81,11 @@ const startServer = async () => {
         const port = process.env.PORT || 4000;
         app.listen(port, () => {
             console.log(`Server is running on http://localhost:${port}`);
+            console.log('Registered routes:');
+            console.log('- /api/users/*');
+            console.log('- /api/content/*');
+            console.log('- /api/test/*');
+            console.log('Connected to DB');
         });
     } catch (error) {
         console.error('Failed to start server:', error);

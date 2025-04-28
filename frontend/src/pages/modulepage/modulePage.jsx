@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Navbar from "../../components/navbar/navbar.jsx"; // Import Navbar
 import "./modulePage.css";
@@ -10,74 +10,95 @@ import 'react-toastify/dist/ReactToastify.css';
 const ModulePage = () => {
   const { moduleName } = useParams(); // Get module name from URL
   const navigate = useNavigate();
+  const [content, setContent] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchModuleContent = async () => {
+      try {
+        console.log('Fetching content for module:', moduleName);
+        const response = await axios.post(
+          "http://localhost:4000/api/content/getbyname",
+          { main_module: moduleName },
+          { withCredentials: true }
+        );
+
+        if (response.data) {
+          console.log('Received content:', response.data);
+          setContent(response.data);
+        } else {
+          toast.error("Failed to fetch module content");
+        }
+      } catch (error) {
+        console.error("Error fetching module content:", error);
+        toast.error("Failed to fetch module content");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchModuleContent();
+  }, [moduleName]);
 
   const started = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:4000/api/test/statusstarted", { course: moduleName }, { withCredentials: true });
-  
-      console.log(response.data);
+      // First update the progress status
+      const progressResponse = await axios.post(
+        "http://localhost:4000/api/test/statusstarted",
+        { course: moduleName },
+        { withCredentials: true }
+      );
+
+      console.log(progressResponse.data);
       toast.success("Module started successfully!", { autoClose: 2000 });
+      
+      // Navigate to the first submodule
       setTimeout(() => {
         navigate(`/module/${moduleName}/submodule/0`);
       }, 2000);
-  
+
     } catch (error) {
+      console.error("Error starting module:", error);
       toast.error("Failed to start module. Please try again.", { autoClose: 2000 });
     }
   };
 
-  // Define YouTube videos & theory for each module
-  const moduleContent = {
-    preamble: {
-      video: "https://www.youtube.com/embed/zjmstaR9DNI",
-      theory: `The Preamble of the Indian Constitution serves as the introduction and reflects the guiding principles and philosophy of the document. It declares India as a sovereign, socialist, secular, and democratic republic, ensuring justice, liberty, equality, and fraternity for all citizens.`,
-      file: "/files/preamble.pdf", // Sample file URL
-    },
-    "fundamental-rights": {
-      video: "https://www.youtube.com/embed/example2",
-      theory: `Fundamental Rights are the cornerstone of the Indian Constitution, providing citizens with essential freedoms such as the Right to Equality, Right to Freedom, Right against Exploitation, Right to Freedom of Religion, Cultural and Educational Rights, and the Right to Constitutional Remedies.`,
-      file: "/files/fundamental-rights.pdf",
-    },
-    "directive-principles": {
-      video: "https://www.youtube.com/embed/example3",
-      theory: `Directive Principles of State Policy are guidelines for the government to establish social and economic democracy. They include principles promoting social welfare, economic equality, education, public health, and environmental protection.`,
-      file: "/files/directive-principles.pdf",
-    },
-    "fundamental-duties": {
-      video: "https://www.youtube.com/embed/example4",
-      theory: `Fundamental Duties were added by the 42nd Amendment in 1976 to remind citizens of their responsibilities towards the nation. These include respecting the Constitution, upholding national unity, safeguarding public property, and promoting harmony.`,
-      file: "/files/fundamental-duties.pdf",
-    },
-  };
+  if (loading) {
+    return (
+      <div className="module-page">
+        <Navbar />
+        <div className="loading">Loading module content...</div>
+      </div>
+    );
+  }
 
-  const content = moduleContent[moduleName] || moduleContent["preamble"]; // Default to Preamble
+  if (!content) {
+    return (
+      <div className="module-page">
+        <Navbar />
+        <div className="error">Failed to load module content</div>
+      </div>
+    );
+  }
 
   return (
     <div className="module-page">
       <Navbar />
       <ToastContainer />
-      {/* YouTube Video */}
-      <div className="video-container">
-        <iframe
-          src={content.video}
-          title="YouTube Video"
-          allowFullScreen
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        ></iframe>
-      </div>
-
-      {/* Theory Section */}
-      <div className="theory-section">
+      
+      {/* Overview Section */}
+      <div className="overview-section">
         <h2>{moduleName.replace("-", " ").toUpperCase()}</h2>
-        <p>{content.theory}</p>
+        <p>{content.overview_content.description}</p>
+        <div className="overview-details">
+          <p><strong>Adoption Date:</strong> {content.overview_content.adoption_date}</p>
+          <p><strong>Significance:</strong> {content.overview_content.significance}</p>
+        </div>
       </div>
 
       {/* Buttons Section */}
       <div className="module-buttons">
-        <a href={content.file} download className="download-btn">
-          Download File
-        </a>
         <button onClick={started} className="start-btn">Start Module</button>
       </div>
     </div>

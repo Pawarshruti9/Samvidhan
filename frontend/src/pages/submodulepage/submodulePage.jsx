@@ -1,32 +1,55 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import Navbar from "../../components/navbar/navbar.jsx";
-import { useTranslation } from "react-i18next";
-import englishData from "../../locales/english.json";
-import hindiData from "../../locales/hindi.json";
-import axios from "axios";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import "./submodulePage.css";
+import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SubmodulePage = () => {
   const { moduleName, submoduleIndex } = useParams();
   const navigate = useNavigate();
-  const { i18n } = useTranslation();
-  const [content, setContent] = useState(
-    englishData.module[moduleName]?.submodules[submoduleIndex] ||
-      englishData.module["preamble"].submodules[0]
-  );
+  const [content, setContent] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [currentSubmodule, setCurrentSubmodule] = useState(null);
 
-  const isLastSubmodule =
-    parseInt(submoduleIndex) === englishData.module[moduleName].submodules.length - 1;
+  useEffect(() => {
+    const fetchModuleContent = async () => {
+      try {
+        console.log('Fetching content for module:', moduleName);
+        const response = await axios.post(
+          "http://localhost:4000/api/content/getbyname",
+          { main_module: moduleName },
+          { withCredentials: true }
+        );
 
-  const updateProgress = async (status) => {
+        if (response.data) {
+          console.log('Received content:', response.data);
+          setContent(response.data);
+          setCurrentSubmodule(response.data.submodules[parseInt(submoduleIndex)]);
+        } else {
+          toast.error("Failed to fetch module content");
+        }
+      } catch (error) {
+        console.error("Error fetching module content:", error);
+        toast.error("Failed to fetch module content");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchModuleContent();
+  }, [moduleName, submoduleIndex]);
+
+  const updateProgress = async () => {
     try {
-      console.log('Updating progress with:', { moduleName, status });
+      console.log('Updating progress for module:', moduleName);
       const response = await axios.post(
         'http://localhost:4000/api/users/updateprogress',
-        { moduleName, status },
+        { 
+          moduleName: moduleName,
+          status: 'inprogress'
+        },
         { 
           withCredentials: true,
           headers: {
@@ -37,7 +60,10 @@ const SubmodulePage = () => {
       
       console.log('Progress update response:', response.data);
       if (response.data.success) {
-        toast.success('Progress updated successfully');
+        // Only show toast for the first next button click
+        if (parseInt(submoduleIndex) === 0) {
+          toast.success('Progress updated successfully');
+        }
       } else {
         toast.error(response.data.message || 'Failed to update progress');
       }
@@ -48,68 +74,82 @@ const SubmodulePage = () => {
   };
 
   const handleNext = async () => {
-    // Update progress to inprogress when moving to next submodule
-    await updateProgress('inprogress');
+    try {
+      // Update progress status
+      await updateProgress();
 
-    if (isLastSubmodule) {
-      navigate(`/module/${moduleName}/quiz`);
-    } else {
-      navigate(`/module/${moduleName}/submodule/${parseInt(submoduleIndex) + 1}`);
+      const nextIndex = parseInt(submoduleIndex) + 1;
+      if (nextIndex < content.submodules.length) {
+        navigate(`/module/${moduleName}/submodule/${nextIndex}`);
+      } else {
+        // Navigate to quiz or completion page
+        navigate(`/module/${moduleName}/quiz`);
+      }
+    } catch (error) {
+      console.error('Error in handleNext:', error);
+      toast.error('Failed to proceed to next submodule');
     }
   };
 
-  // Load content dynamically based on the selected language
-  useEffect(() => {
-    const selectedData = i18n.language === "hi" ? hindiData.module : englishData.module;
-    setContent(
-      selectedData[moduleName]?.submodules[submoduleIndex] ||
-        selectedData["preamble"].submodules[0]
+  if (loading) {
+    return (
+      <div className="submodule-page">
+        <Navbar />
+        <div className="loading">Loading submodule content...</div>
+      </div>
     );
-  }, [i18n.language, moduleName, submoduleIndex]);
+  }
+
+  if (!currentSubmodule) {
+    return (
+      <div className="submodule-page">
+        <Navbar />
+        <div className="error">Failed to load submodule content</div>
+      </div>
+    );
+  }
+
+  const renderContent = (content) => {
+    if (typeof content === 'string') {
+      return <p>{content}</p>;
+    } else if (Array.isArray(content)) {
+      return (
+        <ul>
+          {content.map((item, index) => (
+            <li key={index}>{renderContent(item)}</li>
+          ))}
+        </ul>
+      );
+    } else if (typeof content === 'object') {
+      return (
+        <div>
+          {Object.entries(content).map(([key, value]) => (
+            <div key={key}>
+              <h3>{key.replace(/_/g, ' ').toUpperCase()}</h3>
+              {renderContent(value)}
+            </div>
+          ))}
+        </div>
+      );
+    }
+    return null;
+  };
 
   return (
     <div className="submodule-page">
-        <Navbar />
+      <Navbar />
+      <ToastContainer />
+      
+      <div className="submodule-content">
+        <h2>{currentSubmodule.title}</h2>
+        {renderContent(currentSubmodule.content)}
+      </div>
 
-        {/* YouTube Video */}
-        <div className="submodule-video-container">
-            <iframe
-            src={content.video}
-            title="Submodule Video"
-            allowFullScreen
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            ></iframe>
-        </div>
-
-        {/* Theory Section */}
-        <div className="submodule-theory-section">
-            <h2>{content.title}</h2>
-            <div dangerouslySetInnerHTML={{ __html: content.theory }}></div>
-        </div>
-
-        {/* Buttons Section */}
-        <div className="submodule-buttons">
-            <button
-                className="submodule-download-btn"
-                onClick={() => window.location.href = content.file}
-                >
-                Download File
-            </button>
-            {submoduleIndex > 0 && (
-                <button onClick={() => navigate(`/module/${moduleName}/submodule/${parseInt(submoduleIndex) - 1}`)}>
-                ⬅️ Previous
-                </button>
-            )}
-            {parseInt(submoduleIndex) < englishData.module[moduleName].submodules.length - 1 ? (
-                <button onClick={handleNext}>
-                    Next ➡️
-                </button>
-            ) : (
-                <button onClick={() => navigate(`/module/${moduleName}/quiz`)}>
-                    📖 Take Quiz
-                </button>
-            )}
-        </div>
+      <div className="submodule-navigation">
+        <button onClick={handleNext} className="next-btn">
+          {parseInt(submoduleIndex) < content.submodules.length - 1 ? "Next" : "Go to Quiz"}
+        </button>
+      </div>
     </div>
   );
 };

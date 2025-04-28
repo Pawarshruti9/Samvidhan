@@ -1,11 +1,90 @@
 .submodule-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #f8f9fa;
-    min-height: 120vh;
     padding: 20px;
-    padding-top: 120px;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+    padding-top: 80px; /* Space for fixed navbar */
+}
+
+.submodule-content {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.submodule-content h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: 600;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+.submodule-content h3 {
+    color: #34495e;
+    margin: 25px 0 15px;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.submodule-content p {
+    line-height: 1.8;
+    margin-bottom: 15px;
+    color: #2c3e50;
+    font-size: 16px;
+}
+
+.submodule-content ul {
+    list-style-type: disc;
+    margin-left: 25px;
+    margin-bottom: 20px;
+}
+
+.submodule-content li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    color: #2c3e50;
+}
+
+.submodule-navigation {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+    padding: 20px 0;
+}
+
+.next-btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.next-btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.loading, .error {
+    text-align: center;
+    padding: 40px;
+    font-size: 18px;
+    color: #7f8c8d;
+    background: white;
+    border-radius: 10px;
+    margin-top: 20px;
 }
 
 /* Video Section */
