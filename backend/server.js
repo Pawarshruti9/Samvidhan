@@ -45,7 +45,10 @@ app.use(cookieParser());
 
 // Error handling middleware
 app.use((err, req, res, next) => {
-    console.error(err.stack);
+    console.error('Error:', err);
+    console.error('Request URL:', req.url);
+    console.error('Request Method:', req.method);
+    console.error('Request Body:', req.body);
     res.status(500).json({ 
         success: false, 
         message: 'Something went wrong!',
@@ -58,11 +61,18 @@ app.use('/api/users', userRouter);
 app.use('/api/content', contenrRouter);
 app.use('/api/test', testRouter);
 
+// Debug route registration
+console.log('Registered routes:');
+console.log('- /api/users/*');
+console.log('- /api/content/*');
+console.log('- /api/test/*');
+
 // 404 handler
 app.use((req, res) => {
+    console.log('404 - Route not found:', req.method, req.url);
     res.status(404).json({
         success: false,
-        message: `Route ${req.url} not found`
+        message: `Route ${req.method} ${req.url} not found`
     });
 });
 

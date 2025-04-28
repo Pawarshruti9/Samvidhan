@@ -1,7 +1,10 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Navbar from "../../components/navbar/navbar";
 import { FaInfoCircle } from "react-icons/fa"; // For the help icon
+import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./quizPage.css";
 
 // Dummy questions for UI testing (replace with backend data)
@@ -21,6 +24,7 @@ const dummyQuestions = [
 
 const QuizPage = () => {
   const navigate = useNavigate();
+  const { moduleName } = useParams();
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState({});
   const [showResult, setShowResult] = useState(false);
@@ -44,19 +48,51 @@ const QuizPage = () => {
     }
   };
 
+  const updateProgress = async (status) => {
+    try {
+      console.log('Updating progress with:', { moduleName, status });
+      const response = await axios.post(
+        'http://localhost:4000/api/users/updateprogress',
+        { moduleName, status },
+        { 
+          withCredentials: true,
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        }
+      );
+      
+      console.log('Progress update response:', response.data);
+      if (response.data.success) {
+        toast.success('Progress updated successfully');
+      } else {
+        toast.error(response.data.message || 'Failed to update progress');
+      }
+    } catch (error) {
+      console.error('Error updating progress:', error.response?.data || error.message);
+      toast.error(error.response?.data?.message || 'Failed to update progress');
+    }
+  };
+
   // Finish Quiz
-  const finishQuiz = () => {
+  const finishQuiz = async () => {
     let correct = 0;
     dummyQuestions.forEach((q, index) => {
       if (selectedAnswers[index] === q.correctAnswer) correct++;
     });
     setScore(correct);
     setShowResult(true);
+
+    // Update progress to completed if score is passing
+    if (correct >= dummyQuestions.length / 2) {
+      await updateProgress('completed');
+    }
   };
 
   return (
     <div className="quiz-page">
       <Navbar />
+      <ToastContainer />
 
       {/* Progress & Help Section */}
       <div className="quiz-header">

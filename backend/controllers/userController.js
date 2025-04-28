@@ -127,6 +127,50 @@ const deleteUser = catchAsyncError(async (req, res, next) => {
     res.status(200).json({ success: true, message: "User deleted successfully" });
 });
 
+const updateProgress = catchAsyncError(async (req, res, next) => {
+    const { moduleName, status } = req.body;
+    const userId = req.user.id;
+
+    console.log('Updating progress request:', { moduleName, status, userId });
+
+    // Validate module name
+    const validModules = ['preamble', 'fundamental-rights', 'directive-principles', 'fundamental-duties'];
+    if (!validModules.includes(moduleName)) {
+        console.log('Invalid module name:', moduleName);
+        return next(new ApiError(400, 'Invalid module name'));
+    }
+
+    // Validate status
+    const validStatuses = ['started', 'inprogress', 'completed'];
+    if (!validStatuses.includes(status)) {
+        console.log('Invalid status:', status);
+        return next(new ApiError(400, 'Invalid status'));
+    }
+
+    try {
+        // Update the progress
+        const user = await User.findByIdAndUpdate(
+            userId,
+            { [`progress.${moduleName}`]: status },
+            { new: true }
+        );
+
+        if (!user) {
+            console.log('User not found:', userId);
+            return next(new ApiError(404, 'User not found'));
+        }
+
+        console.log('Progress updated successfully:', user.progress);
+        res.status(200).json({
+            success: true,
+            message: 'Progress updated successfully',
+            user
+        });
+    } catch (error) {
+        console.error('Error updating progress:', error);
+        next(new ApiError(500, 'Error updating progress'));
+    }
+});
 
 export {
     registerUser,
@@ -136,4 +180,5 @@ export {
     getAllUsers,
     getSingleUser,
     deleteUser,
+    updateProgress,
 };
