@@ -50,6 +50,25 @@ const importContent = async () => {
         await preambleContent.save();
         console.log('Preamble content imported successfully');
 
+        // Import Fundamental Rights content
+        const fundamentalRightsPath = path.join(__dirname, '../fundamentalrights.json');
+        const fundamentalRightsData = JSON.parse(fs.readFileSync(fundamentalRightsPath, 'utf8'));
+        
+        // Create new content document for Fundamental Rights
+        const fundamentalRightsContent = new Content({
+            main_module: fundamentalRightsData.main_module,
+            overview_content: fundamentalRightsData.overview_content,
+            submodules: Object.entries(fundamentalRightsData)
+                .filter(([key]) => key.startsWith('submodule_'))
+                .map(([key, value]) => ({
+                    title: value.title,
+                    content: value.content
+                }))
+        });
+
+        await fundamentalRightsContent.save();
+        console.log('Fundamental Rights content imported successfully');
+
         // Log the total number of documents in the collection
         const count = await Content.countDocuments();
         console.log(`Total documents in collection: ${count}`);

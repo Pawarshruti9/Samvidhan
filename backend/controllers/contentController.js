@@ -45,8 +45,11 @@ const getContent = catchAsyncError(async (req, res, next) => {
         console.log('Available collections:', collections.map(c => c.name));
 
         console.log('Searching for module in database...');
-        // Try different search approaches
-        const searchTerm = main_module.charAt(0).toUpperCase() + main_module.slice(1).toLowerCase();
+        // Format the module name correctly
+        const searchTerm = main_module
+            .split('-')
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+            .join(' ');
         console.log('Searching for:', searchTerm);
         
         // First try exact match
