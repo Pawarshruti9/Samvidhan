@@ -1,18 +1,39 @@
 import React from "react";
 import { useTranslation } from "react-i18next"; // Import translation hook
 import "./gameSection.css";
-import image1 from "../../assets/img1.jpeg";
 import image2 from "../../assets/word-scramble.jpeg";
 import image3 from "../../assets/hangman.jpeg";
+import image4 from "../../assets/memorygame.png";
 
 const GameSection = () => {
   const { t } = useTranslation(); // Get translation function
 
   const gameData = [
-    { title: t("games.spinWheel.title"), description: t("games.spinWheel.description"), image: image1 },
-    { title: t("games.wordScramble.title"), description: t("games.wordScramble.description"), image: image2 },
-    { title: t("games.hangman.title"), description: t("games.hangman.description"), image: image3 }
+    { 
+      title: t("games.wordScramble.title"), 
+      description: t("games.wordScramble.description"), 
+      image: image2,
+      link: "#" // Add your word scramble game link here
+    },
+    { 
+      title: t("games.hangman.title"), 
+      description: t("games.hangman.description"), 
+      image: image3,
+      link: "#" // Add your hangman game link here
+    },
+    { 
+      title: "Memory Game", 
+      description: "Test your memory by matching pairs of cards related to the Indian Constitution", 
+      image: image4,
+      link: "https://pawarshruti9.github.io/MemoryGame"
+    }
   ];
+
+  const handlePlayNow = (link) => {
+    if (link !== "#") {
+      window.open(link, '_blank');
+    }
+  };
 
   return (
     <section className="game-section">
@@ -35,7 +56,12 @@ const GameSection = () => {
             <div className="game-card-content">
               <h3>{game.title}</h3>
               <p>{game.description}</p>
-              <button className="cta-button">{t("games.playNow")}</button>
+              <button 
+                className="cta-button"
+                onClick={() => handlePlayNow(game.link)}
+              >
+                {t("games.playNow")}
+              </button>
             </div>
           </div>
         ))}
