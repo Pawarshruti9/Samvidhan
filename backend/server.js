@@ -44,12 +44,16 @@ app.use(cors({
 app.use(express.json());
 app.use(cookieParser());
 
-// Error handling middleware
-app.use((err, req, res, next) => {
-    console.error('Error:', err);
-    console.error('Request URL:', req.url);
-    console.error('Request Method:', req.method);
-    res.status(500).json({ error: 'Internal Server Error' });
+// Add route debugging middleware before routes
+app.use((req, res, next) => {
+    console.log('Incoming request:', {
+        method: req.method,
+        url: req.url,
+        path: req.path,
+        baseUrl: req.baseUrl,
+        originalUrl: req.originalUrl
+    });
+    next();
 });
 
 // Routes
@@ -63,9 +67,23 @@ console.log('- /api/users/*');
 console.log('- /api/content/*');
 console.log('- /api/test/*');
 
+// Error handling middleware
+app.use((err, req, res, next) => {
+    console.error('Error:', err);
+    console.error('Request URL:', req.url);
+    console.error('Request Method:', req.method);
+    res.status(500).json({ error: 'Internal Server Error' });
+});
+
 // 404 handler
 app.use((req, res) => {
-    console.log('404 - Route not found:', req.method, req.url);
+    console.log('404 - Route not found:', {
+        method: req.method,
+        url: req.url,
+        path: req.path,
+        baseUrl: req.baseUrl,
+        originalUrl: req.originalUrl
+    });
     res.status(404).json({
         success: false,
         message: `Route ${req.method} ${req.url} not found`

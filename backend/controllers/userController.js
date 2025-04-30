@@ -172,6 +172,60 @@ const updateProgress = catchAsyncError(async (req, res, next) => {
     }
 });
 
+const generateCertificate = catchAsyncError(async (req, res, next) => {
+    const { moduleName } = req.params;
+    const userId = req.user.id;
+
+    console.log('Generating certificate for:', { moduleName, userId });
+
+    // Validate module name
+    const validModules = ['preamble', 'fundamental-rights', 'directive-principles', 'fundamental-duties'];
+    if (!validModules.includes(moduleName)) {
+        return next(new ApiError(400, 'Invalid module name'));
+    }
+
+    try {
+        const user = await User.findById(userId);
+        if (!user) {
+            return next(new ApiError(404, 'User not found'));
+        }
+
+        // Check if module is completed
+        if (user.progress[moduleName] !== 'completed') {
+            return next(new ApiError(400, 'Module not completed'));
+        }
+
+        // Format the module name for display
+        const formattedModuleName = moduleName
+            .split('-')
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(' ');
+
+        // Generate certificate content
+        const certificateContent = {
+            userName: user.name.toUpperCase(),
+            moduleName: formattedModuleName,
+            completionDate: new Date().toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            }),
+            certificateId: `${user._id.toString().slice(-6)}-${moduleName.slice(0, 3).toUpperCase()}-${Date.now().toString().slice(-6)}`
+        };
+
+        console.log('Generated certificate data:', certificateContent);
+
+        // Send certificate data
+        res.status(200).json({
+            success: true,
+            certificate: certificateContent
+        });
+    } catch (error) {
+        console.error('Error generating certificate:', error);
+        next(new ApiError(500, 'Error generating certificate'));
+    }
+});
+
 export {
     registerUser,
     loginUser,
@@ -181,4 +235,5 @@ export {
     getSingleUser,
     deleteUser,
     updateProgress,
+    generateCertificate
 };
