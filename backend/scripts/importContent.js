@@ -10,7 +10,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Load environment variables from the correct path
-dotenv.config({ path: path.join(process.cwd(), 'backend', '.env') });
+dotenv.config({ path: path.join(__dirname, '../.env') });
 
 const connectDB = async () => {
     try {
@@ -68,6 +68,25 @@ const importContent = async () => {
 
         await fundamentalRightsContent.save();
         console.log('Fundamental Rights content imported successfully');
+
+        // Import Directive Principles content
+        const directivePrinciplesPath = path.join(__dirname, '../directiveprin.json');
+        const directivePrinciplesData = JSON.parse(fs.readFileSync(directivePrinciplesPath, 'utf8'));
+        
+        // Create new content document for Directive Principles
+        const directivePrinciplesContent = new Content({
+            main_module: directivePrinciplesData.main_module,
+            overview_content: directivePrinciplesData.overview_content,
+            submodules: Object.entries(directivePrinciplesData)
+                .filter(([key]) => key.startsWith('submodule_'))
+                .map(([key, value]) => ({
+                    title: value.title,
+                    content: value.content
+                }))
+        });
+
+        await directivePrinciplesContent.save();
+        console.log('Directive Principles content imported successfully');
 
         // Log the total number of documents in the collection
         const count = await Content.countDocuments();

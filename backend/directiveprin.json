@@ -1,5 +1,15 @@
     {
     "main_module": "Directive Principles of State Policy",
+    "overview_content": {
+        "description": "The Directive Principles of State Policy (DPSP) are guidelines or principles given to the central and state governments of India, which they must keep in mind while formulating policies and enacting laws. These principles are enshrined in Part IV (Articles 36-51) of the Constitution of India.",
+        "adoption_date": "26th November 1949",
+        "42nd_amendment": {
+            "year": 1976,
+            "added_words": ["Socialist", "Secular"]
+        },
+        "significance": "While not enforceable in courts, these principles are fundamental in the governance of the country and it is the duty of the State to apply these principles in making laws. They aim to establish social and economic democracy in the country.",
+        "visual_note": "The Directive Principles are like a compass for the government, guiding it towards the goal of a welfare state."
+    },
     "submodule_1": {
         "title": "Introduction to Directive Principles",
         "content": {    

@@ -18,10 +18,15 @@ const ModulePage = () => {
       try {
         console.log('Fetching content for module:', moduleName);
         // Format the module name to match backend expectations
-        const formattedModuleName = moduleName
-          .split('-')
-          .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-          .join(' ');
+        let formattedModuleName;
+        if (moduleName === 'directive-principles') {
+          formattedModuleName = 'Directive Principles of State Policy';
+        } else {
+          formattedModuleName = moduleName
+            .split('-')
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+            .join(' ');
+        }
         
         const response = await axios.post(
           "http://localhost:4000/api/content/getbyname",

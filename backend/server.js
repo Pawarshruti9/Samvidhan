@@ -5,54 +5,31 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import connectToDatabase from './config/database.js';
 import userRouter from './routes/userRoute.js';
-import testRouter from './routes/testRoute.js'
-import contentRouter from './routes/contentRoute.js'
+import testRouter from './routes/testRoute.js';
+import contentRouter from './routes/contentRoute.js';
 
 const app = express();
 
 // Debugging middleware
 app.use((req, res, next) => {
     console.log(`${req.method} ${req.url}`);
+    console.log('Request headers:', req.headers);
     console.log('Request body:', req.body);
     next();
 });
 
 // CORS configuration
 app.use(cors({
-    origin: function(origin, callback) {
-        // Allow requests with no origin (like mobile apps or curl requests)
-        if (!origin) return callback(null, true);
-        
-        // Allow all origins in development
-        if (process.env.NODE_ENV !== 'production') {
-            return callback(null, true);
-        }
-        
-        // In production, you can add specific origins here
-        const allowedOrigins = ['http://localhost:3000', 'http://localhost:5173'];
-        if (allowedOrigins.indexOf(origin) === -1) {
-            const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
-            return callback(new Error(msg), false);
-        }
-        return callback(null, true);
-    },
+    origin: 'http://localhost:3000',
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept']
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept'],
+    exposedHeaders: ['Set-Cookie', 'Date', 'ETag']
 }));
 
+// Body parsing middleware
 app.use(express.json());
 app.use(cookieParser());
-
-// Add route debugging middleware before routes
-app.use((req, res, next) => {
-    console.log('Incoming request:', {
-        method: req.method,
-        url: req.url,
-        body: req.body
-    });
-    next();
-});
 
 // Routes
 app.use('/api/users', userRouter);
@@ -61,8 +38,12 @@ app.use('/api/content', contentRouter);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).json({ error: 'Something went wrong!' });
+    console.error('Error:', err);
+    console.error('Stack:', err.stack);
+    res.status(500).json({ 
+        error: 'Something went wrong!',
+        message: err.message 
+    });
 });
 
 // Start server
@@ -75,9 +56,11 @@ const startServer = async () => {
         app.listen(port, () => {
             console.log(`Server is running on http://localhost:${port}`);
             console.log('Registered routes:');
-            console.log('- /api/users/*');
-            console.log('- /api/content/*');
-            console.log('- /api/test/*');
+            app._router.stack.forEach((r) => {
+                if (r.route && r.route.path) {
+                    console.log(`${Object.keys(r.route.methods).join(',')} ${r.route.path}`);
+                }
+            });
             console.log('Connected to DB');
         });
     } catch (error) {
