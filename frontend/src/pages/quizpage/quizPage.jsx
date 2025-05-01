@@ -1,59 +1,40 @@
-import React, { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import Navbar from "../../components/navbar/navbar";
-import { FaInfoCircle } from "react-icons/fa"; // For the help icon
-import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import "./quizPage.css";
-
-// Dummy questions for UI testing (replace with backend data)
-const dummyQuestions = [
-  {
-    question: "What is the capital of India?",
-    options: ["Mumbai", "Delhi", "Kolkata", "Chennai"],
-    correctAnswer: "Delhi",
-  },
-  {
-    question: "Who wrote the Indian Constitution?",
-    options: ["Mahatma Gandhi", "B.R. Ambedkar", "Nehru", "Sardar Patel"],
-    correctAnswer: "B.R. Ambedkar",
-  },
-  // Add more questions
-];
+import React, { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import { quizQuestions } from '../../data/quizQuestions';
+import axios from 'axios';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Navbar from '../../components/navbar/navbar.jsx';
+import './quizPage.css';
 
 const QuizPage = () => {
-  const navigate = useNavigate();
   const { moduleName } = useParams();
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [selectedAnswers, setSelectedAnswers] = useState({});
-  const [showResult, setShowResult] = useState(false);
+  const navigate = useNavigate();
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [score, setScore] = useState(0);
+  const [showResult, setShowResult] = useState(false);
+  const [questions, setQuestions] = useState([]);
 
-  // Handle option selection
-  const handleSelect = (option) => {
-    setSelectedAnswers({ ...selectedAnswers, [currentQuestion]: option });
+  useEffect(() => {
+    // Load questions based on module name
+    const moduleQuestions = quizQuestions[moduleName] || [];
+    setQuestions(moduleQuestions);
+  }, [moduleName]);
+
+  const handleAnswerSelect = (answer) => {
+    setSelectedAnswer(answer);
   };
 
-  // Handle next and previous
-  const nextQuestion = () => {
-    if (currentQuestion < dummyQuestions.length - 1) {
-      setCurrentQuestion(currentQuestion + 1);
-    }
-  };
-
-  const prevQuestion = () => {
-    if (currentQuestion > 0) {
-      setCurrentQuestion(currentQuestion - 1);
-    }
-  };
-
-  const updateProgress = async (status) => {
+  const updateProgress = async () => {
     try {
-      console.log('Updating progress with:', { moduleName, status });
+      // Update progress
       const response = await axios.post(
         'http://localhost:4000/api/users/updateprogress',
-        { moduleName, status },
+        { 
+          moduleName: moduleName,
+          status: 'completed'
+        },
         { 
           withCredentials: true,
           headers: {
@@ -62,9 +43,16 @@ const QuizPage = () => {
         }
       );
       
-      console.log('Progress update response:', response.data);
       if (response.data.success) {
-        toast.success('Progress updated successfully');
+        // Refresh user data
+        await axios.get('http://localhost:4000/api/users/getcurrentuser', {
+          withCredentials: true,
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
+        
+        toast.success('Module completed successfully!');
       } else {
         toast.error(response.data.message || 'Failed to update progress');
       }
@@ -74,90 +62,98 @@ const QuizPage = () => {
     }
   };
 
-  // Finish Quiz
-  const finishQuiz = async () => {
-    let correct = 0;
-    dummyQuestions.forEach((q, index) => {
-      if (selectedAnswers[index] === q.correctAnswer) correct++;
-    });
-    setScore(correct);
-    setShowResult(true);
+  const handleNextQuestion = () => {
+    if (selectedAnswer === questions[currentQuestionIndex].correctAnswer) {
+      setScore(score + 1);
+    }
 
-    // Update progress to completed if score is passing
-    if (correct >= dummyQuestions.length / 2) {
-      await updateProgress('completed');
+    if (currentQuestionIndex < questions.length - 1) {
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
+      setSelectedAnswer(null);
+    } else {
+      setShowResult(true);
+      // Check if score is 50% or more
+      const percentage = (score / questions.length) * 100;
+      if (percentage >= 50) {
+        updateProgress();
+      }
     }
   };
 
-  return (
-    <div className="quiz-page">
-      <Navbar />
-      <ToastContainer />
+  const handleRestart = () => {
+    setCurrentQuestionIndex(0);
+    setSelectedAnswer(null);
+    setScore(0);
+    setShowResult(false);
+  };
 
-      {/* Progress & Help Section */}
-      <div className="quiz-header">
-        <FaInfoCircle className="help-icon" title="Quiz Instructions" />
-        <p>
-          Questions Solved: {Object.keys(selectedAnswers).length}/{dummyQuestions.length}
-        </p>
-      </div>
+  const handleGoToHome = () => {
+    navigate('/');
+  };
 
-      {/* Question Card */}
-      <div className="quiz-question-card">
-        <h3>{dummyQuestions[currentQuestion].question}</h3>
-        <div className="quiz-options">
-          {dummyQuestions[currentQuestion].options.map((option, index) => (
-            <button
-              key={index}
-              className={`option-btn ${selectedAnswers[currentQuestion] === option ? "selected" : ""}`}
-              onClick={() => handleSelect(option)}
-            >
-              {option}
-            </button>
-          ))}
-        </div>
+  if (questions.length === 0) {
+    return (
+      <>
+        <Navbar />
+        <div className="quiz-container">Loading questions...</div>
+      </>
+    );
+  }
 
-        {/* Navigation Buttons */}
-        <div className="quiz-buttons">
-          {currentQuestion > 0 && (
-            <button onClick={prevQuestion} className="prev-btn">⬅️ Previous</button>
-          )}
-          {currentQuestion < dummyQuestions.length - 1 ? (
-            <button onClick={nextQuestion} className="next-btn">Next ➡️</button>
+  if (showResult) {
+    const percentage = (score / questions.length) * 100;
+    return (
+      <>
+        <Navbar />
+        <div className="quiz-container">
+          <h2>Quiz Complete!</h2>
+          <p>Your score: {score} out of {questions.length} ({percentage.toFixed(1)}%)</p>
+          {percentage >= 50 ? (
+            <p className="success-message">Congratulations! You've completed this module!</p>
           ) : (
-            <button onClick={finishQuiz} className="finish-btn">Finish Quiz</button>
+            <p className="try-again-message">You need at least 50% to complete the module. Try again!</p>
           )}
+          <div className="quiz-buttons">
+            <button onClick={handleRestart}>Try Again</button>
+            <button onClick={handleGoToHome}>Go to Home</button>
+          </div>
+        </div>
+      </>
+    );
+  }
+
+  const currentQuestion = questions[currentQuestionIndex];
+
+  return (
+    <>
+      <Navbar />
+      <div className="quiz-container">
+        <h2>{moduleName.replace(/-/g, ' ').toUpperCase()} Quiz</h2>
+        <div className="question-container">
+          <p className="question-number">Question {currentQuestionIndex + 1} of {questions.length}</p>
+          <h3 className="question-text">{currentQuestion.question}</h3>
+          <div className="options-container">
+            {currentQuestion.options.map((option, index) => (
+              <button
+                key={index}
+                className={`option-button ${selectedAnswer === option ? 'selected' : ''}`}
+                onClick={() => handleAnswerSelect(option)}
+              >
+                {option}
+              </button>
+            ))}
+          </div>
+        </div>
+        <div className="quiz-buttons">
+          <button
+            onClick={handleNextQuestion}
+            disabled={selectedAnswer === null}
+          >
+            {currentQuestionIndex === questions.length - 1 ? 'Finish' : 'Next'}
+          </button>
         </div>
       </div>
-
-      {/* Result Popup */}
-        {showResult && (
-        <div className="quiz-result-overlay">
-            <div className="quiz-result-card">
-            <span className="close-btn" onClick={() => navigate("/")}>✖</span>
-            <h2>{score >= dummyQuestions.length / 2 ? "🎉 Congratulations!" : "❌ Better Luck Next Time!"}</h2>
-            <p>{score >= dummyQuestions.length / 2 ? "You Passed the Quiz!" : "You Failed the Quiz."}</p>
-
-            {/* Result Statistics */}
-            <div className="quiz-stats">
-                <div className="quiz-stat-card">
-                <h3>{dummyQuestions.length}</h3>
-                <p>Total Questions</p>
-                </div>
-                <div className="quiz-stat-card">
-                <h3>{score}</h3>
-                <p>Correct Answers</p>
-                </div>
-                <div className="quiz-stat-card">
-                <h3>{dummyQuestions.length - score}</h3>
-                <p>Wrong Answers</p>
-                </div>
-            </div>
-            </div>
-        </div>
-        )}
-
-    </div>
+    </>
   );
 };
 
