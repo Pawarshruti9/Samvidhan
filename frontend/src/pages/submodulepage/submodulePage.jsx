@@ -132,13 +132,46 @@ const SubmodulePage = () => {
       );
     } else if (typeof content === 'object') {
       return (
-        <div>
-          {Object.entries(content).map(([key, value]) => (
-            <div key={key}>
-              <h3>{key.replace(/_/g, ' ').toUpperCase()}</h3>
-              {renderContent(value)}
-            </div>
-          ))}
+        <div className="content-section">
+          {Object.entries(content).map(([key, value]) => {
+            // Skip rendering if value is null or undefined
+            if (value === null || value === undefined) return null;
+            
+            // Format the key for display
+            const formattedKey = key
+              .split('_')
+              .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+              .join(' ');
+            
+            return (
+              <div key={key} className="content-block">
+                {key === 'article_reference' ? (
+                  <div className="article-reference">
+                    <h3>Article Reference</h3>
+                    <p>{value}</p>
+                  </div>
+                ) : (
+                  <>
+                    <h3>{formattedKey}</h3>
+                    {typeof value === 'object' && 'description' in value ? (
+                      <>
+                        <p className="description">{value.description}</p>
+                        {value.principles && (
+                          <ul className="principles-list">
+                            {value.principles.map((principle, idx) => (
+                              <li key={idx}>{principle}</li>
+                            ))}
+                          </ul>
+                        )}
+                      </>
+                    ) : (
+                      renderContent(value)
+                    )}
+                  </>
+                )}
+              </div>
+            );
+          })}
         </div>
       );
     }

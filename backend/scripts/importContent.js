@@ -88,6 +88,34 @@ const importContent = async () => {
         await directivePrinciplesContent.save();
         console.log('Directive Principles content imported successfully');
 
+        // Import Fundamental Duties content
+        const fundamentalDutiesPath = path.join(__dirname, '../fundamentalduties.json');
+        const fundamentalDutiesData = JSON.parse(fs.readFileSync(fundamentalDutiesPath, 'utf8'));
+        
+        // Create new content document for Fundamental Duties
+        const fundamentalDutiesContent = new Content({
+            main_module: fundamentalDutiesData.main_module,
+            overview_content: {
+                description: fundamentalDutiesData.overview.description,
+                adoption_date: fundamentalDutiesData.overview.historical_context.addition,
+                "42nd_amendment": {
+                    year: 1976,
+                    added_words: ["Fundamental Duties"]
+                },
+                significance: fundamentalDutiesData.overview.legal_status.enforceability,
+                visual_note: fundamentalDutiesData.overview.legal_status.reminder_function
+            },
+            submodules: Object.entries(fundamentalDutiesData)
+                .filter(([key]) => key.startsWith('submodule_'))
+                .map(([key, value]) => ({
+                    title: value.title,
+                    content: value.basic_concept || value.content
+                }))
+        });
+
+        await fundamentalDutiesContent.save();
+        console.log('Fundamental Duties content imported successfully');
+
         // Log the total number of documents in the collection
         const count = await Content.countDocuments();
         console.log(`Total documents in collection: ${count}`);
