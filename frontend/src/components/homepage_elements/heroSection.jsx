@@ -7,13 +7,11 @@ const Hero = () => {
 
   return (
     <section className="hero">
-      <div className="hero-overlay">
-        <div className="hero-content">
-          <h2>{t("hero.heading")}</h2>
-          <p>{t("hero.description")}</p>
-          <p dangerouslySetInnerHTML={{ __html: t("hero.subDescription") }}></p>
-          <a href="#learn-more" className="hero-btn">{t("hero.button")}</a>
-        </div>
+      <div className="hero-content">
+        <h2>{t("hero.heading")}</h2>
+        <p>{t("hero.description")}</p>
+        <p dangerouslySetInnerHTML={{ __html: t("hero.subDescription") }}></p>
+        <a href="#learn-more" className="hero-btn">{t("hero.button")}</a>
       </div>
     </section>
   );
