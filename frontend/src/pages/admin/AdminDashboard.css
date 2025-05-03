@@ -16,6 +16,33 @@
     margin-bottom: 30px;
 }
 
+.admin-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.admin-tabs button {
+    padding: 10px 20px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #666;
+    transition: all 0.3s;
+}
+
+.admin-tabs button:hover {
+    color: #333;
+}
+
+.admin-tabs button.active {
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+}
+
 .add-user-form {
     background: white;
     padding: 20px;
@@ -172,6 +199,15 @@ tr:hover {
         padding: 10px;
     }
 
+    .admin-tabs {
+        flex-wrap: wrap;
+    }
+
+    .admin-tabs button {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
     .progress-details {
         min-width: 300px;
     }
@@ -182,5 +218,10 @@ tr:hover {
 
     th, td {
         padding: 8px;
+    }
+
+    .table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
     }
 } 

@@ -2,7 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next"; // Import translation hook
 import "./gameSection.css";
 import image2 from "../../assets/word-scramble.jpeg";
-import image3 from "../../assets/hangman.jpeg";
+import image3 from "../../assets/thinkdrop.jpg";
 import image4 from "../../assets/memorygame.png";
 
 const GameSection = () => {

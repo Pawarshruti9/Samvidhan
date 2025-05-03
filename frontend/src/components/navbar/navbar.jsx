@@ -132,8 +132,8 @@ const Navbar = () => {
               <a className="dropdown-toggle">{t("navbar.learnPlay")}</a>
               {dropdownOpen && (
                 <div className="dropdown-menu">
-                  <a href="#">{t("navbar.hangman")}</a>
-                  <a href="#">{t("navbar.spinWheel")}</a>
+                  <a href="https://pawarshruti9.github.io/Drag_And_Drop/">{t("navbar.hangman")}</a>
+                  <a href="https://pawarshruti9.github.io/MemoryGame">{t("navbar.spinWheel")}</a>
                   <a href="#">{t("navbar.wordScramble")}</a>
                 </div>
               )}
@@ -143,23 +143,23 @@ const Navbar = () => {
 
         {/* Desktop Right Side Items */}
         <div className="navbar-right">
-          <div className="search-wrapper">
+        <div className="search-wrapper">
             <FaSearch className="search-icon" onClick={toggleSearch} />
-            {searchActive && (
-              <form className="search-form" onSubmit={handleSearch}>
-                <input
-                  type="text"
-                  placeholder={t("ask") || "Search..."}
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="search-input"
-                />
-                <button type="submit" className="search-go">
-                  {t("go") || "Go"}
-                </button>
-              </form>
-            )}
-          </div>
+          {searchActive && (
+            <form className="search-form" onSubmit={handleSearch}>
+              <input
+                type="text"
+                placeholder={t("ask") || "Search..."}
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="search-input"
+              />
+              <button type="submit" className="search-go">
+                {t("go") || "Go"}
+              </button>
+            </form>
+          )}
+        </div>
 
           <div className="language-selector" onMouseEnter={() => setLanguageOpen(true)} onMouseLeave={() => setLanguageOpen(false)}>
             <button className="language-button">
@@ -206,8 +206,8 @@ const Navbar = () => {
               </a>
               {dropdownOpen && (
                 <div className="dropdown-menu">
-                  <a className="mobile-menu-item" href="#">{t("navbar.hangman")}</a>
-                  <a className="mobile-menu-item" href="#">{t("navbar.spinWheel")}</a>
+                  <a className="mobile-menu-item" href="https://pawarshruti9.github.io/Drag_And_Drop/">{t("navbar.hangman")}</a>
+                  <a className="mobile-menu-item" href="https://pawarshruti9.github.io/MemoryGame">{t("navbar.spinWheel")}</a>
                   <a className="mobile-menu-item" href="#">{t("navbar.wordScramble")}</a>
                 </div>
               )}
@@ -241,14 +241,14 @@ const Navbar = () => {
                 onClick={() => setLanguageOpen(!languageOpen)}
               >
                 <FaLanguage /> {i18n.language === 'en' ? 'English' : 'हिंदी'}
-              </button>
+          </button>
               {languageOpen && (
                 <div className="language-menu">
                   <button onClick={() => changeLanguage("en")}>English</button>
                   <button onClick={() => changeLanguage("hi")}>हिंदी</button>
                 </div>
               )}
-            </div>
+        </div>
 
             <Link to="/login" className="login-button mobile-menu-item">
               {t("Login")}

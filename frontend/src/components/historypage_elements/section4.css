@@ -62,7 +62,7 @@
     border-radius: 10px;
     margin-top: auto;
   }
-
+  
   .section4-card-image img {
     width: 100%;
     height: 100%;
@@ -102,8 +102,8 @@
     .section4-title {
       font-size: 2rem;
       margin-bottom: 30px;
-    }
-
+  }
+  
     .section4-cards {
       gap: 20px;
     }
@@ -118,7 +118,7 @@
 
     .section4-card-image {
       height: 180px;
-    }
+  }
   }
   
   @media (max-width: 480px) {
@@ -146,7 +146,7 @@
       font-size: 1.2rem;
       margin-bottom: 10px;
     }
-
+  
     .section4-card-description {
       font-size: 0.9rem;
       margin-bottom: 15px;

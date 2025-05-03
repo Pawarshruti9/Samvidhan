@@ -11,22 +11,22 @@ const Section4 = () => {
     <section className="section4">
       <div className="section4-container">
         <div className="section4-cards">
-          {/* Adoption of the Constitution */}
+        {/* Adoption of the Constitution */}
           <div className="section4-card">
             <h3 className="section4-card-title">{t("history.section4.adoptionTitle")}</h3>
             <p className="section4-card-description">{t("history.section4.adoptionDescription")}</p>
             <div className="section4-card-image">
-              <img src={adoptionImage} alt="Adoption of Constitution" />
-            </div>
+            <img src={adoptionImage} alt="Adoption of Constitution" />
           </div>
+        </div>
 
-          {/* Constitution Comes into Effect */}
+        {/* Constitution Comes into Effect */}
           <div className="section4-card">
             <h3 className="section4-card-title">{t("history.section4.effectTitle")}</h3>
             <p className="section4-card-description">{t("history.section4.effectDescription")}</p>
             <div className="section4-card-image">
-              <img src={implementationImage} alt="Constitution Comes into Effect" />
-            </div>
+            <img src={implementationImage} alt="Constitution Comes into Effect" />
+          </div>
           </div>
         </div>
       </div>

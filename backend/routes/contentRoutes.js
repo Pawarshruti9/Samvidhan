@@ -1,23 +1,21 @@
-import express from 'express';
-import Content from '../models/Content.js';
-import isAuthenticatedUser from '../middleware/auth.js';
-
+const express = require('express');
 const router = express.Router();
+const Content = require('../models/Content');
+const auth = require('../middleware/auth');
 
 // Get all content of a specific type
-router.get('/:type', isAuthenticatedUser, async (req, res) => {
+router.get('/:type', auth, async (req, res) => {
     try {
         const { type } = req.params;
         const content = await Content.find({ type });
         res.json({ success: true, [type]: content });
     } catch (error) {
-        console.error('Error fetching content:', error);
         res.status(500).json({ success: false, message: 'Error fetching content' });
     }
 });
 
 // Add new content
-router.post('/:type', isAuthenticatedUser, async (req, res) => {
+router.post('/:type', auth, async (req, res) => {
     try {
         const { type } = req.params;
         const newContent = new Content({
@@ -27,13 +25,12 @@ router.post('/:type', isAuthenticatedUser, async (req, res) => {
         await newContent.save();
         res.json({ success: true, message: 'Content added successfully' });
     } catch (error) {
-        console.error('Error adding content:', error);
         res.status(500).json({ success: false, message: 'Error adding content' });
     }
 });
 
 // Update content
-router.put('/:type/:id', isAuthenticatedUser, async (req, res) => {
+router.put('/:type/:id', auth, async (req, res) => {
     try {
         const { type, id } = req.params;
         const updatedContent = await Content.findByIdAndUpdate(
@@ -46,13 +43,12 @@ router.put('/:type/:id', isAuthenticatedUser, async (req, res) => {
         }
         res.json({ success: true, message: 'Content updated successfully' });
     } catch (error) {
-        console.error('Error updating content:', error);
         res.status(500).json({ success: false, message: 'Error updating content' });
     }
 });
 
 // Delete content
-router.delete('/:type/:id', isAuthenticatedUser, async (req, res) => {
+router.delete('/:type/:id', auth, async (req, res) => {
     try {
         const { type, id } = req.params;
         const deletedContent = await Content.findByIdAndDelete(id);
@@ -61,9 +57,8 @@ router.delete('/:type/:id', isAuthenticatedUser, async (req, res) => {
         }
         res.json({ success: true, message: 'Content deleted successfully' });
     } catch (error) {
-        console.error('Error deleting content:', error);
         res.status(500).json({ success: false, message: 'Error deleting content' });
     }
 });
 
-export default router;
+module.exports = router; 
