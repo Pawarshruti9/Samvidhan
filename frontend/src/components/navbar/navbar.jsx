@@ -1,26 +1,30 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "./navbar.css";
 import Logo from "../../assets/logo/logo.png";
 import { useTranslation } from "react-i18next";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { FaSearch, FaUser, FaLanguage, FaBars, FaTimes } from 'react-icons/fa';
 
 const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [languageOpen, setLanguageOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState(""); // 🔍 Search state
-  const [searchActive, setSearchActive] = useState(false); // Track search icon toggle
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchActive, setSearchActive] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
+    setLanguageOpen(false);
   };
 
   const goToModule = (moduleName) => {
     navigate(`/module/${moduleName}`);
+    setIsMenuOpen(false);
   };
 
   const handleSearch = (e) => {
@@ -33,21 +37,25 @@ const Navbar = () => {
         navigate('/module/preamble');
         setSearchQuery("");
         setSearchActive(false);
+        setIsMenuOpen(false);
         return;
       } else if (query === 'fundamental rights' || query === 'fundamentalrights') {
         navigate('/module/fundamental-rights');
         setSearchQuery("");
         setSearchActive(false);
+        setIsMenuOpen(false);
         return;
       } else if (query === 'directive principles' || query === 'directiveprinciples') {
         navigate('/module/directive-principles');
         setSearchQuery("");
         setSearchActive(false);
+        setIsMenuOpen(false);
         return;
       } else if (query === 'fundamental duties' || query === 'fundamentalduties') {
         navigate('/module/fundamental-duties');
         setSearchQuery("");
         setSearchActive(false);
+        setIsMenuOpen(false);
         return;
       }
 
@@ -82,41 +90,46 @@ const Navbar = () => {
         navigate(`/module/${targetModule}`);
         setSearchQuery("");
         setSearchActive(false);
+        setIsMenuOpen(false);
       } else {
         // If no article number found, perform regular search
         navigate(`/search?q=${encodeURIComponent(query)}`);
         setSearchQuery("");
         setSearchActive(false);
+        setIsMenuOpen(false);
       }
     }
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const toggleSearch = () => {
+    setSearchActive(!searchActive);
   };
 
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        {/* Logo */}
-        <div className="navbar-logo">
+        <Link to="/" className="navbar-logo">
           <img src={Logo} alt="Logo" />
-        </div>
+        </Link>
 
-        {/* Nav Links */}
+        <button className="mobile-menu-btn" onClick={toggleMenu}>
+          {isMenuOpen ? <FaTimes /> : <FaBars />}
+        </button>
+
+        {/* Desktop Navigation */}
         <div className="navbar-links-container">
           <div className="navbar-links">
-            <a onClick={() => navigate("/")}>{t("navbar.home")}</a>
+            <Link to="/">{t("navbar.home")}</Link>
             <a onClick={() => goToModule("preamble")}>{t("navbar.preamble")}</a>
             <a onClick={() => goToModule("fundamental-rights")}>{t("navbar.fundamentalRights")}</a>
             <a onClick={() => goToModule("directive-principles")}>{t("navbar.directivePrinciples")}</a>
             <a onClick={() => goToModule("fundamental-duties")}>{t("navbar.fundamentalDuties")}</a>
-
-            {/* Learn & Play Dropdown */}
-            <div
-              className="dropdown"
-              onMouseEnter={() => setDropdownOpen(true)}
-              onMouseLeave={() => setDropdownOpen(false)}
-            >
-              <a href="#" className="dropdown-toggle">
-                {t("navbar.learnPlay")}
-              </a>
+            <div className="dropdown" onMouseEnter={() => setDropdownOpen(true)} onMouseLeave={() => setDropdownOpen(false)}>
+              <a className="dropdown-toggle">{t("navbar.learnPlay")}</a>
               {dropdownOpen && (
                 <div className="dropdown-menu">
                   <a href="#">{t("navbar.hangman")}</a>
@@ -128,55 +141,129 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* 🔍 Clickable Search Icon */}
-        <div className="search-wrapper">
-          <span
-            className="search-icon"
-            onClick={() => setSearchActive(!searchActive)} // Toggle input visibility
-          >
-            🔍
-          </span>
+        {/* Desktop Right Side Items */}
+        <div className="navbar-right">
+          <div className="search-wrapper">
+            <FaSearch className="search-icon" onClick={toggleSearch} />
+            {searchActive && (
+              <form className="search-form" onSubmit={handleSearch}>
+                <input
+                  type="text"
+                  placeholder={t("ask") || "Search..."}
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="search-input"
+                />
+                <button type="submit" className="search-go">
+                  {t("go") || "Go"}
+                </button>
+              </form>
+            )}
+          </div>
 
-          {/* Search Form (Only shows when searchActive is true) */}
-          {searchActive && (
-            <form className="search-form" onSubmit={handleSearch}>
-              <input
-                type="text"
-                placeholder={t("ask") || "Search..."}
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="search-input"
-              />
-              <button type="submit" className="search-go">
-                {t("go") || "Go"}
-              </button>
-            </form>
-          )}
-        </div>
+          <div className="language-selector" onMouseEnter={() => setLanguageOpen(true)} onMouseLeave={() => setLanguageOpen(false)}>
+            <button className="language-button">
+              <FaLanguage /> {i18n.language === 'en' ? 'English' : 'हिंदी'}
+            </button>
+            {languageOpen && (
+              <div className="language-menu">
+                <button onClick={() => changeLanguage("en")}>English</button>
+                <button onClick={() => changeLanguage("hi")}>हिंदी</button>
+              </div>
+            )}
+          </div>
 
-        {/* Language Selector */}
-        <div 
-          className="language-selector"
-          onMouseEnter={() => setLanguageOpen(true)}
-          onMouseLeave={() => setLanguageOpen(false)}
-        >
-          <button className="language-button">{t("navbar.language")}</button>
-          <div className={`language-menu ${languageOpen ? "open" : ""}`}>
-            <button onClick={() => changeLanguage("en")}>{t("navbar.english")}</button>
-            <button onClick={() => changeLanguage("hi")}>{t("navbar.hindi")}</button>
+          <Link to="/login" className="login-button">
+            {t("Login")}
+          </Link>
+
+          <div className="profile-emoji" onClick={() => navigate("/profile")}>
+            <FaUser />
           </div>
         </div>
 
-        {/* Login Button */}
-        <div>
-          <button className="login-button" onClick={() => navigate("/login")}>
-            {t("Login")}
-          </button>
-        </div>
+        {/* Mobile Menu */}
+        <div className={`mobile-menu ${isMenuOpen ? 'active' : ''}`}>
+          <div className="mobile-menu-items">
+            <Link to="/" className="mobile-menu-item" onClick={() => setIsMenuOpen(false)}>
+              {t("navbar.home")}
+            </Link>
+            <a className="mobile-menu-item" onClick={() => goToModule("preamble")}>
+              {t("navbar.preamble")}
+            </a>
+            <a className="mobile-menu-item" onClick={() => goToModule("fundamental-rights")}>
+              {t("navbar.fundamentalRights")}
+            </a>
+            <a className="mobile-menu-item" onClick={() => goToModule("directive-principles")}>
+              {t("navbar.directivePrinciples")}
+            </a>
+            <a className="mobile-menu-item" onClick={() => goToModule("fundamental-duties")}>
+              {t("navbar.fundamentalDuties")}
+            </a>
+            <div className="dropdown">
+              <a className="mobile-menu-item dropdown-toggle" onClick={() => setDropdownOpen(!dropdownOpen)}>
+                {t("navbar.learnPlay")}
+              </a>
+              {dropdownOpen && (
+                <div className="dropdown-menu">
+                  <a className="mobile-menu-item" href="#">{t("navbar.hangman")}</a>
+                  <a className="mobile-menu-item" href="#">{t("navbar.spinWheel")}</a>
+                  <a className="mobile-menu-item" href="#">{t("navbar.wordScramble")}</a>
+                </div>
+              )}
+            </div>
 
-        {/* Profile Emoji */}
-        <div className="profile-emoji" onClick={() => navigate("/profile")}>
-          👤
+            <div className="mobile-menu-divider" />
+
+            <div className="search-wrapper">
+              <FaSearch className="search-icon" onClick={toggleSearch} />
+              {searchActive && (
+                <form className="search-form" onSubmit={handleSearch}>
+                  <input
+                    type="text"
+                    placeholder={t("ask") || "Search..."}
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="search-input"
+                  />
+                  <button type="submit" className="search-go">
+                    {t("go") || "Go"}
+                  </button>
+                </form>
+              )}
+            </div>
+
+            <div className="mobile-menu-divider" />
+
+            <div className="language-selector">
+              <button 
+                className="language-button"
+                onClick={() => setLanguageOpen(!languageOpen)}
+              >
+                <FaLanguage /> {i18n.language === 'en' ? 'English' : 'हिंदी'}
+              </button>
+              {languageOpen && (
+                <div className="language-menu">
+                  <button onClick={() => changeLanguage("en")}>English</button>
+                  <button onClick={() => changeLanguage("hi")}>हिंदी</button>
+                </div>
+              )}
+            </div>
+
+            <Link to="/login" className="login-button mobile-menu-item">
+              {t("Login")}
+            </Link>
+
+            <div 
+              className="profile-emoji mobile-menu-item"
+              onClick={() => {
+                navigate("/profile");
+                setIsMenuOpen(false);
+              }}
+            >
+              <FaUser /> {t("navbar.profile")}
+            </div>
+          </div>
         </div>
       </div>
     </nav>

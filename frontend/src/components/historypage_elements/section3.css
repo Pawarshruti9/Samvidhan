@@ -64,6 +64,10 @@
   
   /* Responsive */
   @media (max-width: 900px) {
+    .section3 {
+      padding: 30px 20px;
+    }
+
     .section3-container {
       flex-direction: column;
       transform: none;
@@ -83,6 +87,38 @@
     .section3-title,
     .section3-description {
       text-align: center;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .section3-title {
+      font-size: 1.6rem;
+    }
+
+    .section3-description {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .section3 {
+      padding: 20px 15px;
+    }
+
+    .section3-container {
+      padding: 15px;
+    }
+
+    .section3-title {
+      font-size: 1.4rem;
+    }
+
+    .section3-description {
+      font-size: 0.9rem;
+    }
+
+    .section3-number {
+      font-size: 3rem;
     }
   }
   

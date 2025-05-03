@@ -21,7 +21,7 @@
     },
     "about": {
         "title": "The Constitution of India: The Foundation of Our Democracy",
-        "description": "The Constitution of India is the supreme law of the land, serving as the foundation for the country’s legal and political system. It outlines the structure of the government, defines the powers and duties of various institutions, and guarantees fundamental rights and freedoms to every citizen.",
+        "description": "The Constitution of India is the supreme law of the land, serving as the foundation for the country's legal and political system. It outlines the structure of the government, defines the powers and duties of various institutions, and guarantees fundamental rights and freedoms to every citizen.",
         "pillars": {
             "protectingRights": {
                 "title": "Protecting Rights",
@@ -119,7 +119,7 @@
             "description": "Unscramble the jumbled letters and find the right constitutional terms."
         },
         "hangman": {
-            "title": "Hangman",
+            "title": "Think & Drop",
             "description": "Guess the correct constitutional word before you run out of attempts!"
         },
         "playNow": "Play Now"
@@ -148,7 +148,7 @@
         "title": "History of the Indian Constitution",
         "section1": {
             "title": "The Journey Towards the Constitution",
-            "description": "The journey towards India's Constitution began long before its formal adoption. The fight for independence ignited the aspiration for self-rule, with leaders envisioning a legal framework that would protect citizens' rights and define India's governance. The first major step came in 1934 when the idea of a Constituent Assembly was proposed, gaining momentum after the historic Quit India Movement in 1942. Eventually, on December 9, 1946, the Constituent Assembly held its first meeting, laying the foundation for drafting the longest written constitution in the world. Over the next three years, extensive debates, discussions, and amendments shaped the final document, which was officially adopted on January 26, 1950, marking India’s transformation into a sovereign republic."
+            "description": "The journey towards India's Constitution began long before its formal adoption. The fight for independence ignited the aspiration for self-rule, with leaders envisioning a legal framework that would protect citizens' rights and define India's governance. The first major step came in 1934 when the idea of a Constituent Assembly was proposed, gaining momentum after the historic Quit India Movement in 1942. Eventually, on December 9, 1946, the Constituent Assembly held its first meeting, laying the foundation for drafting the longest written constitution in the world. Over the next three years, extensive debates, discussions, and amendments shaped the final document, which was officially adopted on January 26, 1950, marking India's transformation into a sovereign republic."
         },
         "section2": {
             "title": "The Constituent Assembly: A Vision for a New India",
@@ -288,7 +288,7 @@
         },
         "fundamental-duties": {
             "title": "Fundamental Duties",
-            "theory": "Fundamental Duties are responsibilities that every Indian citizen should follow to maintain harmony and protect the country’s values. These were not originally part of the Constitution but were added by the <b>42nd Amendment Act in 1976</b> on the recommendation of the <b>Swaran Singh Committee</b>. Article 51A lists 11 Fundamental Duties:<ul><li>Respect the Constitution, National Flag, and National Anthem.</li><li>Follow and promote the noble ideas of our freedom struggle.</li><li>Uphold and protect the unity and integrity of India.</li><li>Defend the country and provide national service when required.</li><li>Promote harmony and spirit of common brotherhood.</li><li>Value and preserve the rich heritage of India's culture.</li><li>Protect and improve the environment, including forests, rivers, and wildlife.</li><li>Develop a scientific temper and a spirit of inquiry.</li><li>Safeguard public property and avoid violence.</li><li>Strive towards excellence in all fields of life.</li><li>Provide opportunities for education to children aged 6-14 years (added by the <b>86th Amendment in 2002</b>).</li></ul> Unlike Fundamental Rights, these duties are not legally enforceable, meaning no one can be punished for not following them. However, they remind every citizen of their responsibility to make India a better place to live.",
+            "theory": "Fundamental Duties are responsibilities that every Indian citizen should follow to maintain harmony and protect the country's values. These were not originally part of the Constitution but were added by the <b>42nd Amendment Act in 1976</b> on the recommendation of the <b>Swaran Singh Committee</b>. Article 51A lists 11 Fundamental Duties:<ul><li>Respect the Constitution, National Flag, and National Anthem.</li><li>Follow and promote the noble ideas of our freedom struggle.</li><li>Uphold and protect the unity and integrity of India.</li><li>Defend the country and provide national service when required.</li><li>Promote harmony and spirit of common brotherhood.</li><li>Value and preserve the rich heritage of India's culture.</li><li>Protect and improve the environment, including forests, rivers, and wildlife.</li><li>Develop a scientific temper and a spirit of inquiry.</li><li>Safeguard public property and avoid violence.</li><li>Strive towards excellence in all fields of life.</li><li>Provide opportunities for education to children aged 6-14 years (added by the <b>86th Amendment in 2002</b>).</li></ul> Unlike Fundamental Rights, these duties are not legally enforceable, meaning no one can be punished for not following them. However, they remind every citizen of their responsibility to make India a better place to live.",
             "video": "https://www.youtube.com/embed/example4",
             "file": "/files/fundamental-duties.pdf",
             "submodules": [

@@ -8,27 +8,25 @@ const Section4 = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="constitution-section">
-      <div className="constitution-container">
-        {/* Adoption of the Constitution */}
-        <div className="constitution-card">
-          <div className="constitution-image">
-            <img src={adoptionImage} alt="Adoption of Constitution" />
+    <section className="section4">
+      <div className="section4-container">
+        <div className="section4-cards">
+          {/* Adoption of the Constitution */}
+          <div className="section4-card">
+            <h3 className="section4-card-title">{t("history.section4.adoptionTitle")}</h3>
+            <p className="section4-card-description">{t("history.section4.adoptionDescription")}</p>
+            <div className="section4-card-image">
+              <img src={adoptionImage} alt="Adoption of Constitution" />
+            </div>
           </div>
-          <div className="constitution-content">
-            <h2 className="constitution-title">{t("history.section4.adoptionTitle")}</h2>
-            <p className="constitution-description">{t("history.section4.adoptionDescription")}</p>
-          </div>
-        </div>
 
-        {/* Constitution Comes into Effect */}
-        <div className="constitution-card">
-          <div className="constitution-image">
-            <img src={implementationImage} alt="Constitution Comes into Effect" />
-          </div>
-          <div className="constitution-content">
-            <h2 className="constitution-title">{t("history.section4.effectTitle")}</h2>
-            <p className="constitution-description">{t("history.section4.effectDescription")}</p>
+          {/* Constitution Comes into Effect */}
+          <div className="section4-card">
+            <h3 className="section4-card-title">{t("history.section4.effectTitle")}</h3>
+            <p className="section4-card-description">{t("history.section4.effectDescription")}</p>
+            <div className="section4-card-image">
+              <img src={implementationImage} alt="Constitution Comes into Effect" />
+            </div>
           </div>
         </div>
       </div>

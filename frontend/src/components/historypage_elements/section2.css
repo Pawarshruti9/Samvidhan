@@ -60,6 +60,37 @@
   
     .section2-content {
       width: 90%;
+      padding: 25px 30px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .section2-title {
+      font-size: 1.6rem;
+    }
+
+    .section2-description {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .section2 {
+      padding: 30px 15px;
+    }
+
+    .section2-content {
+      width: 95%;
+      padding: 20px;
+    }
+
+    .section2-title {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+
+    .section2-description {
+      font-size: 0.9rem;
     }
   }
   

@@ -19,7 +19,7 @@ const GameSection = () => {
       title: t("games.hangman.title"), 
       description: t("games.hangman.description"), 
       image: image3,
-      link: "#" // Add your hangman game link here
+      link: "https://pawarshruti9.github.io/Drag_And_Drop/" // Updated Hangman game link
     },
     { 
       title: "Memory Game", 
