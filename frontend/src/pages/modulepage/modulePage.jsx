@@ -12,12 +12,12 @@ const ModulePage = () => {
   const navigate = useNavigate();
   const [content, setContent] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchModuleContent = async () => {
       try {
         console.log('Fetching content for module:', moduleName);
-        // Format the module name to match backend expectations
         let formattedModuleName;
         if (moduleName === 'directive-principles') {
           formattedModuleName = 'Directive Principles of State Policy';
@@ -28,20 +28,29 @@ const ModulePage = () => {
             .join(' ');
         }
         
+        console.log('Formatted module name:', formattedModuleName);
         const response = await axios.post(
           "http://localhost:4000/api/content/getbyname",
           { main_module: formattedModuleName },
           { withCredentials: true }
         );
 
-        if (response.data) {
+        console.log('Raw response:', response);
+        console.log('Response data:', response.data);
+        console.log('Overview content:', response.data?.overview_content);
+        console.log('Description:', response.data?.overview_content?.description);
+
+        if (response.data && response.data.overview_content) {
           console.log('Received content:', response.data);
           setContent(response.data);
         } else {
+          setError("Module content not found or incomplete");
           toast.error("Failed to fetch module content");
         }
       } catch (error) {
         console.error("Error fetching module content:", error);
+        console.error("Error response:", error.response);
+        setError(error.response?.data?.error || "Failed to fetch module content");
         toast.error("Failed to fetch module content");
       } finally {
         setLoading(false);
@@ -84,11 +93,11 @@ const ModulePage = () => {
     );
   }
 
-  if (!content) {
+  if (error || !content) {
     return (
       <div className="module-page">
         <Navbar />
-        <div className="error">Failed to load module content</div>
+        <div className="error">{error || "Failed to load module content"}</div>
       </div>
     );
   }
@@ -101,10 +110,16 @@ const ModulePage = () => {
       {/* Overview Section */}
       <div className="overview-section">
         <h2>{moduleName.replace("-", " ").toUpperCase()}</h2>
-        <p>{content.overview_content.description}</p>
+        {content.overview_content?.description && (
+          <p>{content.overview_content.description}</p>
+        )}
         <div className="overview-details">
-          <p><strong>Adoption Date:</strong> {content.overview_content.adoption_date}</p>
-          <p><strong>Significance:</strong> {content.overview_content.significance}</p>
+          {content.overview_content?.adoption_date && (
+            <p><strong>Adoption Date:</strong> {content.overview_content.adoption_date}</p>
+          )}
+          {content.overview_content?.significance && (
+            <p><strong>Significance:</strong> {content.overview_content.significance}</p>
+          )}
         </div>
       </div>
 

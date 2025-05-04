@@ -1,7 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next"; // Import translation hook
 import "./gameSection.css";
-import image2 from "../../assets/word-scramble.jpeg";
 import image3 from "../../assets/thinkdrop.jpg";
 import image4 from "../../assets/memorygame.png";
 
@@ -9,12 +8,6 @@ const GameSection = () => {
   const { t } = useTranslation(); // Get translation function
 
   const gameData = [
-    { 
-      title: t("games.wordScramble.title"), 
-      description: t("games.wordScramble.description"), 
-      image: image2,
-      link: "#" // Add your word scramble game link here
-    },
     { 
       title: t("games.hangman.title"), 
       description: t("games.hangman.description"), 

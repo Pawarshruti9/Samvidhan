@@ -8,7 +8,6 @@
       "learnPlay": "Learn & Play",
       "hangman": "Think and Drop",
       "spinWheel": "Memory Game",
-      "wordScramble": "Word Scrambe",
       "language": "🌐 Language",
       "english": "English",
       "hindi": "Hindi"
@@ -113,10 +112,6 @@
         "spinWheel": {
             "title": "Memory Game",
             "description": "Match the pairs, test your memory, and sharpen your focus with this fun Memory Game!"
-        },
-        "wordScramble": {
-            "title": "Word Scramble",
-            "description": "Unscramble the jumbled letters and find the right constitutional terms."
         },
         "hangman": {
             "title": "Think & Drop",

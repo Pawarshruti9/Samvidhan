@@ -134,7 +134,6 @@ const Navbar = () => {
                 <div className="dropdown-menu">
                   <a href="https://pawarshruti9.github.io/Drag_And_Drop/">{t("navbar.hangman")}</a>
                   <a href="https://pawarshruti9.github.io/MemoryGame">{t("navbar.spinWheel")}</a>
-                  <a href="#">{t("navbar.wordScramble")}</a>
                 </div>
               )}
             </div>
@@ -208,7 +207,6 @@ const Navbar = () => {
                 <div className="dropdown-menu">
                   <a className="mobile-menu-item" href="https://pawarshruti9.github.io/Drag_And_Drop/">{t("navbar.hangman")}</a>
                   <a className="mobile-menu-item" href="https://pawarshruti9.github.io/MemoryGame">{t("navbar.spinWheel")}</a>
-                  <a className="mobile-menu-item" href="#">{t("navbar.wordScramble")}</a>
                 </div>
               )}
             </div>

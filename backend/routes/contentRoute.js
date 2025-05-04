@@ -1,8 +1,15 @@
 import express from 'express';
-import Content from '../models/Content.js';
+import Content from '../models/contentModel.js';
 import isAuthenticatedUser from '../middleware/auth.js';
+import { getContent } from '../controllers/contentController.js';
 
 const router = express.Router();
+
+// Get content by name
+router.post('/getbyname', isAuthenticatedUser, (req, res, next) => {
+    console.log('Received getbyname request:', req.body);
+    getContent(req, res, next);
+});
 
 // Get all content of a specific type
 router.get('/:type', isAuthenticatedUser, async (req, res) => {

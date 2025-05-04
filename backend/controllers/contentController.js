@@ -44,16 +44,27 @@ const getContent = catchAsyncError(async (req, res, next) => {
         const collections = await mongoose.connection.db.listCollections().toArray();
         console.log('Available collections:', collections.map(c => c.name));
 
+        // Get the content collection
+        const contentCollection = mongoose.connection.db.collection('contents');
+        const allContent = await contentCollection.find({}).toArray();
+        console.log('All content in database:', allContent.map(c => ({ 
+            main_module: c.main_module,
+            has_overview: !!c.overview_content,
+            has_description: !!c.overview_content?.description
+        })));
+
         console.log('Searching for module in database...');
         // Format the module name correctly
-        const searchTerm = main_module
-            .split('-')
-            .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-            .join(' ');
+        const searchTerm = main_module;
         console.log('Searching for:', searchTerm);
         
         // First try exact match
         let moduleDoc = await Content.findOne({ main_module: searchTerm });
+        console.log('Exact match result:', moduleDoc ? {
+            main_module: moduleDoc.main_module,
+            has_overview: !!moduleDoc.overview_content,
+            has_description: !!moduleDoc.overview_content?.description
+        } : 'Not found');
         
         // If not found, try case-insensitive search
         if (!moduleDoc) {
@@ -61,28 +72,29 @@ const getContent = catchAsyncError(async (req, res, next) => {
             moduleDoc = await Content.findOne({
                 main_module: { $regex: new RegExp(`^${searchTerm}$`, 'i') }
             });
+            console.log('Case-insensitive search result:', moduleDoc ? {
+                main_module: moduleDoc.main_module,
+                has_overview: !!moduleDoc.overview_content,
+                has_description: !!moduleDoc.overview_content?.description
+            } : 'Not found');
         }
-
-        // If still not found, try to find any document
-        if (!moduleDoc) {
-            console.log('Trying to find any document...');
-            const allDocs = await Content.find({});
-            console.log('All documents in collection:', allDocs);
-        }
-
-        console.log('Database query result:', moduleDoc ? 'Found' : 'Not found');
 
         if (!moduleDoc) {
             console.log('Module not found in database');
             return res.status(404).json({ error: 'Module not found' });
         }
 
-        console.log('Module found, sending response');
-        res.status(200).json(moduleDoc);
+        // Log the exact data structure being returned
+        console.log('Module data structure:', JSON.stringify(moduleDoc, null, 2));
+        console.log('Overview content:', moduleDoc.overview_content);
+        console.log('Description:', moduleDoc.overview_content?.description);
+
+        // Return the module document directly
+        return res.status(200).json(moduleDoc);
     } catch (error) {
         console.error('Error fetching module:', error);
         console.error('Error stack:', error.stack);
-        res.status(500).json({ error: 'Internal server error' });
+        return res.status(500).json({ error: 'Internal server error' });
     }
 });
 
