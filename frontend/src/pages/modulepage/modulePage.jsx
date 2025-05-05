@@ -127,6 +127,70 @@ const ModulePage = () => {
       <div className="module-buttons">
         <button onClick={started} className="start-btn">Start Module</button>
       </div>
+
+      {/* Video Section - Only for Preamble */}
+      {moduleName === 'preamble' && (
+        <div className="video-container">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/Ef_91JlstZo?si=H528zOBxSN_noezi"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
+        </div>
+      )}
+
+      {/* Video Section - Only for Fundamental Rights */}
+      {moduleName === 'fundamental-rights' && (
+        <div className="video-container">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/CaXQEsln1iY?si=wKR0uamHtG6r4079"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
+        </div>
+      )}
+
+      {/* Video Section - Only for Directive Principles */}
+      {moduleName === 'directive-principles' && (
+        <div className="video-container">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/cTL1IlNIZ_Q?si=neVQGXktuG2HNdc_"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
+        </div>
+      )}
+
+      {/* Video Section - Only for Fundamental Duties */}
+      {moduleName === 'fundamental-duties' && (
+        <div className="video-container">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/VopWuyt4uGU?si=Le9i0TRWm-tu-Juf"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
+        </div>
+      )}
     </div>
   );
 };
